@@ -1,11 +1,15 @@
 import React from "react";
+<<<<<<< HEAD
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+=======
+>>>>>>> dev
 import Books from "./pages/Books";
 import Detail from "./pages/Detail";
 import NoMatch from "./pages/NoMatch";
 import Nav from "./components/Nav";
 
 const App = () => (
+<<<<<<< HEAD
   <Router>
     <div>
       <Nav />
@@ -17,6 +21,12 @@ const App = () => (
       </Switch>
     </div>
   </Router>
+=======
+  <div>
+    <Nav />
+    <Books />
+  </div>
+>>>>>>> dev
 );
 
 export default App;
