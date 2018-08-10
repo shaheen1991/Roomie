@@ -10,7 +10,7 @@ import Wrapper from "./components/Wrapper";
 // import Auth from './Auth/Auth.js';
 // import React, { Component } from 'react';
 // import { Navbar, Button } from 'react-bootstrap';
-// import './App.css';
+import './css/App.css';
 
 const App = () => (
   <Router>
