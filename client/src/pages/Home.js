@@ -2,8 +2,8 @@ import React, {Component} from "react";
 import Container from "../components/Container";
 import Row from "../components/Row";
 import Col from "../components/Col";
-import BigCalendar from 'react-big-calendar'
-import moment from 'moment'
+import BigCalendar from 'react-big-calendar';
+import moment from 'moment';
 import "react-big-calendar/lib/css/react-big-calendar.css";
 
 
