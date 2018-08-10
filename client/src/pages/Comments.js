@@ -12,6 +12,7 @@ const Comments = () => (
         </Col>
       </Row>
     </Container>
+    Hi I'm Kenny! Be My Roommie!
   </div>
 );
 
