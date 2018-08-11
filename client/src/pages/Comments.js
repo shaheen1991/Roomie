@@ -1,71 +1,57 @@
-import React, { Component } from "react";
-import API from "../utils/API";
-import Card from "../components/Card";
-import Alert from "../components/Alert";
+import React from "react";
+import Container from "../components/Container";
+import Row from "../components/Row";
+import Col from "../components/Col";
 
-class Comments extends Component {
-  state = {
-    image: "",
-    match: false,
-    matchCount: 0
-  };
+//adding a form to submit chores,roomiename,details and date
 
-  // When the component mounts, load the next dog to be displayed
-  componentDidMount() {
-    this.loadNextDog();
-  }
+const Comments = () => (
+  <div>
 
-  handleBtnClick = event => {
-    // Get the data-value of the clicked button
-    const btnType = event.target.attributes.getNamedItem("data-value").value;
-    // Clone this.state to the newState object
-    // We'll modify this object and use it to set our component's state
-    const newState = { ...this.state };
+     Hi I'm Kenny! Be My Roommie!
 
-    if (btnType === "pick") {
-      // Set newState.match to either true or false depending on whether or not the dog likes us (1/5 chance)
-      newState.match = 1 === Math.floor(Math.random() * 5) + 1;
 
-      // Set newState.matchCount equal to its current value or its current value + 1 depending on whether the dog likes us
-      newState.matchCount = newState.match
-        ? newState.matchCount + 1
-        : newState.matchCount;
-    } else {
-      // If we thumbs down'ed the dog, we haven't matched with it
-      newState.match = false;
-    }
-    // Replace our component's state with newState, load the next dog image
-    this.setState(newState);
-    this.loadNextDog();
-  };
+    <Container style={{ marginTop: 30 }}>
+      <Row>
+        <Col size="md-12">
+          <h1>Comments Page</h1>
 
-  loadNextDog = () => {
-    API.getRandomDog()
-      .then(res =>
-        this.setState({
-          image: res.data.message
-        })
-      )
-      .catch(err => console.log(err));
-  };
 
-  render() {
-    return (
-      <div>
-        <h1 className="text-center">Make New Friends</h1>
-        <h3 className="text-center">
-          Thumbs up on any pups you'd like to meet!
-        </h3>
-        <Card image={this.state.image} handleBtnClick={this.handleBtnClick} />
-        <h1 className="text-center">
-          Made friends with {this.state.matchCount} pups so far!
-        </h1>
-        <Alert style={{ opacity: this.state.match ? 1 : 0 }} type="success">
-          Yay! That Pup Liked You Too!!!
-        </Alert>
-      </div>
+          <form>
+            <div class="form-group">
+              <label for="chores">Chores</label>
+              <input type="text" class="form-control" id="chores" placeholder="chores"/>
+            </div>
+              <div class="form-group">
+                <label for="selectroomie">Select Roomie</label>
+                <select class="form-control" id="selectroomie">
+                  <option>select</option>
+                  <option>Alex</option>
+                  <option>Joanne</option>
+                  <option>Riya</option>
+                  <option>Shaheen</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label for="details">Details</label>
+                <textarea class="form-control" id="details" rows="3"></textarea>
+              </div>
+              <div class="form-group">
+                <label for="date">Schedule Date</label>
+                <input type="date" class="form-control" id="date" />
+              </div>
+
+              <button type="submit" class="btn btn-success mb-2">Confirm chore</button>
+          </form>
+        </Col>
+      </Row>
+    </Container>
+     
+  </div>
+
+
+
+
     );
-  }
-}
-
-export default Comments;
+    
+    export default Comments;
