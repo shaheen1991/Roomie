@@ -3,6 +3,8 @@ import Container from "../components/Container";
 import Row from "../components/Row";
 import Col from "../components/Col";
 
+//adding a form to submit chores,roomiename,details and date
+
 const Comments = () => (
   <div>
     <Container style={{ marginTop: 30 }}>
