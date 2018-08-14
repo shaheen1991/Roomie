@@ -7,23 +7,19 @@ import Col from "../components/Col";
 
 const Comments = () => (
   <div>
-
-     Hi I'm Kenny! Be My Roommie!
-
-
     <Container style={{ marginTop: 30 }}>
       <Row>
         <Col size="md-12">
-          <h1>Comments Page</h1>
+          <h1>Add Chores</h1>
 
 
           <form>
             <div class="form-group">
-              <label for="chores">Chores</label>
-              <input type="text" class="form-control" id="chores" placeholder="chores"/>
+              <label for="chores">Chore</label>
+              <input type="text" class="form-control" id="chores" placeholder="New chore name"/>
             </div>
               <div class="form-group">
-                <label for="selectroomie">Select Roomie</label>
+                <label for="selectroomie">Chore for: </label>
                 <select class="form-control" id="selectroomie">
                   <option>select</option>
                   <option>Alex</option>
@@ -33,11 +29,11 @@ const Comments = () => (
                 </select>
               </div>
               <div class="form-group">
-                <label for="details">Details</label>
+                <label for="details">Chore Details</label>
                 <textarea class="form-control" id="details" rows="3"></textarea>
               </div>
               <div class="form-group">
-                <label for="date">Schedule Date</label>
+                <label for="date">Chore Due Date</label>
                 <input type="date" class="form-control" id="date" />
               </div>
 
