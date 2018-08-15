@@ -1,11 +1,9 @@
 import React from "react";
 import { BrowserRouter as Router, Route } from "react-router-dom";
-import About from "./pages/About";
-import Comments from "./pages/Comments";
 import Home from "./pages/Home";
-import Login from "./pages/Login";
-import Navbar1 from "./components/Navbar";
-import Footer from "./components/Footer";
+import SmackTalk from "./pages/SmackTalk";
+import ChoreForm from "./pages/ChoreForm";
+import Calendar from "./pages/Calendar";
 import Wrapper from "./components/Wrapper";
 // import Auth from './Auth/Auth.js';
 // import React, { Component } from 'react';
@@ -15,15 +13,12 @@ import './css/App.css';
 const App = () => (
   <Router>
     <div>
-      <Navbar1 />
       <Wrapper>
         <Route exact path="/" component={Home} />
-        <Route exact path="/home" component={Home} />
-        <Route exact path="/about" component={About} />
-        <Route exact path="/comments" component={Comments} />
-        <Route exact path="/login" component={Login} />
+        <Route exact path="/calendar" component={Calendar} />
+        <Route exact path="/smacktalk" component={SmackTalk} />
+        <Route exact path="/choreform" component={ChoreForm} />
       </Wrapper>
-      <Footer />
     </div>
   </Router>
 );

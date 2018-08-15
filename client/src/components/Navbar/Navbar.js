@@ -5,54 +5,42 @@ import "./Navbar.css";
 // Depending on the current path, this component sets the "active" class on the appropriate navigation link item
 const Navbar = props => (
   <nav className="navbar navbar-expand-lg navbar-light bg-light">
-    <Link className="navbar-brand" to="/">
+    <div className="navbar-brand">
       Roomie
-    </Link>
+    </div>
     <div>
       <ul className="navbar-nav">
         <li
           className={
-            window.location.pathname === "/" ||
-            window.location.pathname === "/home"
+            window.location.pathname === "/calendar"
               ? "nav-item active"
               : "nav-item"
           }
         >
-          <Link to="/home" className="nav-link">
-            Home
+          <Link to="/calendar" className="nav-link">
+            Calendar
           </Link>
         </li>
         <li
           className={
-            window.location.pathname === "/about"
+            window.location.pathname === "/smacktalk"
               ? "nav-item active"
               : "nav-item"
           }
         >
-          <Link to="/about" className="nav-link">
-            About Us
+          <Link to="/smacktalk" className="nav-link">
+            SmackTalk
           </Link>
         </li>
         <li
           className={
-            window.location.pathname === "/comments"
+            window.location.pathname === "/choreform"
               ? "nav-item active"
               : "nav-item"
           }
         >
-          <Link to="/comments" className="nav-link">
-            Comments
-          </Link>
-        </li>
-        <li
-          className={
-            window.location.pathname === "/login"
-              ? "nav-item active"
-              : "nav-item"
-          }
-        >
-          <Link to="/login" className="nav-link">
-            Login
+          <Link to="/choreform" className="nav-link">
+            Chores
           </Link>
         </li>
       </ul>
