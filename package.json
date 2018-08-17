@@ -23,6 +23,7 @@
     "auth0-js": "^9.7.3",
     "axios": "^0.16.2",
     "body-parser": "^1.17.2",
+    "create-react-class": "^15.6.3",
     "express": "^4.15.4",
     "fullcalendar": "^3.9.0",
     "if-env": "^1.0.4",
