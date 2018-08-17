@@ -15,29 +15,42 @@ class Calendar extends Component{
   state={
     events:[
       {
+         //*******There is something to note the months are displayed 1 back which means if you want 
+        //to display for month 8 then code must be for month 7 */
         //change to automatically make rent due the first day of the moment by utilizing moment (need to research more!) use regular javascript and maybe math but best to do this on the server side
-        start: new Date(moment().add(1,'days')),
-        end: new Date(moment().add(1, "days")), 
+        //start: new Date(moment().add(1,'days')),
+        //end: new Date(moment().add(1, "days")), 
+        start: new Date(2018, 7, 1),
+        end: new Date(2018, 7, 1),
         title:"Rent Due"
       },
       {
-        start: new Date(moment().add(11,'days')),
-        end: new Date(moment().add(11, "days")),
+        //start: new Date(moment().add(11,'days')),
+        //end: new Date(moment().add(11, "days")),
+        start: new Date(2018, 7, 5),
+        end: new Date(2018, 7, 5),
         title:"Electricity Bill Due"
       },
       {
-        start: new Date(moment().add(7,'days')),
-        end: new Date(moment().add(7, "days")),
+        //start: new Date(moment().add(7,'days')),
+        //end: new Date(moment().add(7, "days")),
+        start: new Date(2018, 7, 7),
+        end: new Date(2018, 7, 7),
         title:"Internet Bill Due"
       },
       {
-        start: new Date(moment().add(15,'days')),
-        end: new Date(moment().add(15, "days")),
+        //start: new Date(moment().add(15,'days')),
+        //end: new Date(moment().add(15, "days")),
+        start: new Date(2018, 7, 15),
+        end: new Date(2018, 7, 15),
         title:"Water Bill Due"
       },
       {
-        start: new Date(moment().add(7,'days')),
-        end: new Date(moment().add(10, "days")),
+       
+        //start: new Date(moment().add(7,'days')),
+       // end: new Date(moment().add(10, "days")),
+        start: new Date(2018, 7, 18),
+        end: new Date(2018, 7, 22),
         title:"Joanne's Vacation"
       } 
     ]

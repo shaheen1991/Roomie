@@ -5,10 +5,12 @@ import SmackTalk from "./pages/SmackTalk";
 import ChoreForm from "./pages/ChoreForm";
 import Calendar from "./pages/Calendar";
 import Wrapper from "./components/Wrapper";
+//import C from "./pages/chat";
 // import Auth from './Auth/Auth.js';
 // import React, { Component } from 'react';
 // import { Navbar, Button } from 'react-bootstrap';
 import './css/App.css';
+import CommentBox from "./pages/chat";
 
 const App = () => (
   <Router>
@@ -16,7 +18,7 @@ const App = () => (
       <Wrapper>
         <Route exact path="/" component={Home} />
         <Route exact path="/calendar" component={Calendar} />
-        <Route exact path="/smacktalk" component={SmackTalk} />
+        <Route exact path="/smacktalk" component={CommentBox} />
         <Route exact path="/choreform" component={ChoreForm} />
       </Wrapper>
     </div>
