@@ -10,7 +10,7 @@ import Wrapper from "./components/Wrapper";
 // import React, { Component } from 'react';
 // import { Navbar, Button } from 'react-bootstrap';
 import './css/App.css';
-import CommentBox from "./pages/chat";
+
 
 const App = () => (
   <Router>
@@ -18,7 +18,7 @@ const App = () => (
       <Wrapper>
         <Route exact path="/" component={Home} />
         <Route exact path="/calendar" component={Calendar} />
-        <Route exact path="/smacktalk" component={CommentBox} />
+        <Route exact path="/smacktalk" component={SmackTalk} />
         <Route exact path="/choreform" component={ChoreForm} />
       </Wrapper>
     </div>
