@@ -74,6 +74,9 @@ class Calendar extends Component{
     // somehow render the modal
   };
   
+  handleCloseModal = () => {
+    this.setState({bigModal: false});
+  }
   
   render(){
     return(
@@ -82,7 +85,7 @@ class Calendar extends Component{
 
           {
             this.state.bigModal ? 
-              <Modal open={true} >
+              <Modal open={true} onClose={this.handleCloseModal}>
                 <Big />
               </Modal> : false
           }
