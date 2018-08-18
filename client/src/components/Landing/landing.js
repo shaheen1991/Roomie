@@ -10,7 +10,7 @@ const Landing = () => (
        <img id="rightPic"/>
        </div>
        <div id="icon">
-       <img id="roomieIcon"/>
+       <img id="roomieIcon" src="/img/roomieIconTrans.png"/>
        </div>
     </div>
 );
