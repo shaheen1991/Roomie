@@ -4,8 +4,8 @@ import ReactDOM from 'react-dom';
 import "./Modal.css";
 
 export default class Big extends React.Component {
-  state = { 
-    open: false,
+  state = {
+    open: false
   };
 
   onOpenModal = () => {
@@ -15,6 +15,7 @@ export default class Big extends React.Component {
   onCloseModal = () => {
     this.setState({ open: false });
   };
+
 
   render() {
     const { open } = this.state;
@@ -45,13 +46,13 @@ export default class Big extends React.Component {
           See source code
         </a>
         {/* <Modal open={open} onClose={this.onCloseModal}> */}
-          <h2>Big modal</h2>
-          {lorem}
-          {lorem}
-          {lorem}
-          {lorem}
-          {lorem}
-          {lorem}
+        <h2>Big modal</h2>
+        {lorem}
+        {lorem}
+        {lorem}
+        {lorem}
+        {lorem}
+        {lorem}
         {/* </Modal> */}
       </div>
     );

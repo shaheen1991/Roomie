@@ -69,24 +69,22 @@ class Calendar extends Component{
     
   } */
 
-  eventFunc = () => {
+  handleOpenModal = () => {
     this.setState({bigModal: true});
-    //somehow render the modal
-
+    // somehow render the modal
   };
   
-
+  
   render(){
     return(
       <div>
         <Navbar1 />
 
-           {
-             this.state.bigModal ? 
-        <Modal open={true}>
-          <Big />
-        </Modal> : false
-          
+          {
+            this.state.bigModal ? 
+              <Modal open={true} >
+                <Big />
+              </Modal> : false
           }
 
 
@@ -101,7 +99,7 @@ class Calendar extends Component{
               defaultView="month"
               selectable  
               //instead of alert, make a modal
-              onSelectEvent={this.eventFunc}  
+              onSelectEvent={this.handleOpenModal}  
               events={this.state.events}
               style={{height:"100vh"}}
               />
