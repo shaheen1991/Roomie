@@ -8,6 +8,8 @@ import moment from 'moment';
 import "react-big-calendar/lib/css/react-big-calendar.css";
 import Navbar1 from "../components/Navbar";
 import Footer from "../components/Footer";
+import Big from "../components/Modal";
+import Modal from 'react-responsive-modal';
 
 BigCalendar.setLocalizer(BigCalendar.momentLocalizer(moment))
 
@@ -40,7 +42,9 @@ class Calendar extends Component{
         end: new Date(moment().add(10, "days")),
         title:"Joanne's Vacation"
       } 
-    ]
+    ],
+
+    bigModal: false
   }
   //events = state
   // retrieve from database and iterate through changing state dynamically.
@@ -52,13 +56,31 @@ class Calendar extends Component{
     
   } */
 
+  eventFunc = () => {
+    this.setState({bigModal: true});
+    //somehow render the modal
+
+  };
+  
+
   render(){
     return(
       <div>
         <Navbar1 />
+
+           {
+             this.state.bigModal ? 
+        <Modal open={true}>
+          <Big />
+        </Modal> : false
+          
+          }
+
+
         <Container style={{ marginTop: 30 }}>
           <Row>
             <Col size="md-12">
+           
               <BigCalendar
               className="customCal"
               // className = if classname doesnt work go to node modules, react-big-calendar lib css react-big-calendar.css and change css there but try to use our own classes****
@@ -66,7 +88,7 @@ class Calendar extends Component{
               defaultView="month"
               selectable  
               //instead of alert, make a modal
-              onSelectEvent={event => alert(event.title)}
+              onSelectEvent={this.eventFunc}  
               events={this.state.events}
               style={{height:"100vh"}}
               />
