@@ -1,3 +1,4 @@
 module.exports = {
-  Chore: require("./chore")
+  Chore: require("./chore"),
+  Smacktalk:require("./smacktalk")
 };
