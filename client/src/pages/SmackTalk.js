@@ -4,7 +4,7 @@ import Row from "../components/Row";
 import Col from "../components/Col";
 import Navbar1 from "../components/Navbar";
 import Footer from "../components/Footer";
-import Chat from "../pages/chat";
+import CommentBox from "../components/Chat";
 
 const SmackTalk = () => (
   <div>
@@ -18,7 +18,7 @@ const SmackTalk = () => (
       <Row>
         <Col size="md-12">
 
-           <Chat/>
+           <CommentBox/>
           
         </Col>
       </Row>

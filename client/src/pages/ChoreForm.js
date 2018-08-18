@@ -16,13 +16,13 @@ const ChoreForm = () => (
 
 
           <form>
-            <div class="form-group">
-              <label for="chores">Chore</label>
-              <input type="text" class="form-control" id="chores" placeholder="New chore name" />
+            <div className="form-group">
+              <label htmlFor="chores">Chore</label>
+              <input type="text" className="form-control" id="chores" placeholder="New chore name" />
             </div>
-            <div class="form-group">
-              <label for="selectroomie">Chore for: </label>
-              <select class="form-control" id="selectroomie">
+            <div className="form-group">
+              <label htmlFor="selectroomie">Chore For: </label>
+              <select className="form-control" id="selectroomie">
                 <option>select</option>
                 <option>Alex</option>
                 <option>Joanne</option>
@@ -30,16 +30,16 @@ const ChoreForm = () => (
                 <option>Shaheen</option>
               </select>
             </div>
-            <div class="form-group">
-              <label for="details">Chore Details</label>
-              <textarea class="form-control" id="details" rows="3"></textarea>
+            <div className="form-group">
+              <label htmlFor="details">Chore Details</label>
+              <textarea className="form-control" id="details" rows="3"></textarea>
             </div>
-            <div class="form-group">
-              <label for="date">Chore Due Date</label>
-              <input type="date" class="form-control" id="date" />
+            <div className="form-group">
+              <label htmlFor="date">Chore Due Date</label>
+              <input type="date" className="form-control" id="date" />
             </div>
 
-            <button type="submit" class="btn btn-success mb-2">Confirm chore</button>
+            <button type="submit" className="btn btn-success mb-2">Confirm chore</button>
           </form>
         </Col>
       </Row>
