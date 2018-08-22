@@ -12,10 +12,10 @@ const ChoreForm = () => (
     <Container style={{ marginTop: 30 }}>
       <Row>
         <Col size="md-12">
-          <h1>Add Chores</h1>
+          <h1 style={{fontFamily: "'Alegreya Sans SC', sans-serif"}}>Add Chores</h1>
 
 
-          <form>
+          <form id = "choreCont"> 
             <div className="form-group">
               <label htmlFor="chores">Chore</label>
               <input type="text" className="form-control" id="chores" placeholder="New chore name" />
@@ -23,11 +23,11 @@ const ChoreForm = () => (
             <div className="form-group">
               <label htmlFor="selectroomie">Chore For: </label>
               <select className="form-control" id="selectroomie">
-                <option>select</option>
-                <option>Alex</option>
-                <option>Joanne</option>
-                <option>Riya</option>
-                <option>Shaheen</option>
+                <option style={{ fontWeight: "bold" }}>select</option>
+                <option style={{ fontWeight: "bold" }}>Alex</option>
+                <option style={{ fontWeight: "bold" }}>Joanne</option>
+                <option style={{ fontWeight: "bold" }}>Riya</option>
+                <option style={{ fontWeight: "bold" }}>Shaheen</option>
               </select>
             </div>
             <div className="form-group">
@@ -39,7 +39,7 @@ const ChoreForm = () => (
               <input type="date" className="form-control" id="date" />
             </div>
 
-            <button type="submit" className="btn btn-success mb-2">Confirm chore</button>
+            <button type="submit" className="btn mb-2" style={{fontFamily: "'Alegreya Sans SC', sans-serif"}}>Confirm chore</button>
           </form>
         </Col>
       </Row>

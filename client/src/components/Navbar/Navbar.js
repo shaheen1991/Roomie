@@ -44,6 +44,10 @@ const Navbar = props => (
           </Link>
         </li>
       </ul>
+      
+      <div>
+        <img id= "roomieIconNav" src="/img/roomieIconTrans.png"/>
+      </div>
     </div>
   </nav>
 );
