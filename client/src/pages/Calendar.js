@@ -13,7 +13,7 @@ import Modal from 'react-responsive-modal';
 
 BigCalendar.setLocalizer(BigCalendar.momentLocalizer(moment))
 
-class Calendar extends Component{
+class Calendar extends Component {
   state={
     events:[
       {
