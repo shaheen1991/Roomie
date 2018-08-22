@@ -1,6 +1,7 @@
 
 import React, { Component } from "react";
 import ReactDOM from 'react-dom';
+import "./chat.css";
 var createReactClass = require('create-react-class');
 
 
@@ -66,16 +67,20 @@ var CommentForm = createReactClass({
     return (
       <form className="comment-form form-group" onSubmit={this.handleSubmit}>
         <div className="input-group">
-          <span className="input-group-addon">Name  </span>
+          <span className="input-group-addon" id="inputName">Name  </span>
           <input type="text" placeholder="Your name" className="form-control" />
           <br/>
         </div>
+        <br/>
         <div className="input-group">
-          <span className="input-group-addon">Comment </span>
+          <span className="input-group-addon" id="inputComment">Comment </span>
           <input type="text" placeholder="Say something..." className="form-control" />
           <br/>
         </div>
-        <input type="submit" value="Post" className="btn btn-primary" />
+        <br/>
+        <input type="submit" value="Post" className="btn" id= "commentPostBtn" />
+        <br/><br/>
+        <hr/>
       </form>
     );
   }
@@ -86,6 +91,7 @@ var Comment = createReactClass({
       <div className="comment">
         <h2 className="author">{this.props.author}</h2>
         {this.props.text}
+        <hr/>
       </div>
     );
   }

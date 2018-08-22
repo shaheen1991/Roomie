@@ -90,7 +90,7 @@ class Calendar extends Component {
             </Modal> : false
         }
 
-
+      
         <Container style={{ marginTop: 30 }}>
           <Row>
             <Col size="md-12">
@@ -109,7 +109,8 @@ class Calendar extends Component {
             </Col>
           </Row>
         </Container>
-        <Footer />
+        
+        <Footer id="footer"/>
       </div>
 
     )
