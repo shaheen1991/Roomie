@@ -1,0 +1,27 @@
+.comment-box {
+    color: rgb (66,110,134);
+    /* border:2px solid rgb(47,49,49);   */
+    padding-top: 20px; 
+}
+
+#commentPostBtn {
+    font-family: 'Alegreya Sans SC', sans-serif;
+    font-weight: lighter;
+}
+
+.author {
+    font-family: 'Alegreya Sans SC', sans-serif;
+    font-weight: lighter;
+}
+
+#inputName {
+    padding-right: 45px;
+}
+
+#inputComment {
+    padding-right: 20px;
+}
+
+.comment {
+    padding-top: 20px;
+}
