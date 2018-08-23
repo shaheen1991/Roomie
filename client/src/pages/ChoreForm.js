@@ -18,16 +18,6 @@ class ChoreForm extends React.Component {
     details: "",
     date: null
   }
-/* 
-  componentDidMount() {
-    this.loadChores();
-  } */
-
- /*  loadChores = () => {
-    API.getChores()
-    .then(this.setState({ books: res.choreName, roomieName: "", details: "", date: null })
-    .catch(err => console.log(err));
-  } */
 
   handleFormSubmit = event => {
     event.preventDefault();
@@ -38,7 +28,9 @@ class ChoreForm extends React.Component {
         roomieName: this.state.roomieName,
         details: this.state.details,
         date: this.state.date
-      });
+      })
+      .then(res => res.json)
+      .catch(err => console.log(err));
     }
   };
 
