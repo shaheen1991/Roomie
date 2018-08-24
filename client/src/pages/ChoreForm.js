@@ -16,7 +16,7 @@ class ChoreForm extends React.Component {
     choreName: "",
     roomieName: "",
     details: "",
-    date: null
+    date: ""
   }
 
   handleFormSubmit = event => {
@@ -29,8 +29,15 @@ class ChoreForm extends React.Component {
         details: this.state.details,
         date: this.state.date
       })
-      .then(res => res.json)
-      .catch(err => console.log(err));
+        .then(
+          this.setState({
+            choreName: "",
+            roomieName: "",
+            details: "",
+            date: ""
+          })
+        )
+        .catch(err => console.log(err));
     }
   };
 
@@ -56,19 +63,19 @@ class ChoreForm extends React.Component {
               <form id="choreCont">
                 <div className="form-group">
                   <label htmlFor="chores">Chore</label>
-                  <input onChange={this.handleInputChange} name="choreName" type="text" className="form-control" id="chores" placeholder="New chore name" />
+                  <input onChange={this.handleInputChange} value={this.state.choreName} name="choreName" type="text" className="form-control" id="chores" placeholder="New chore name" />
                 </div>
                 <div className="form-group">
                   <label htmlFor="selectroomie">Chore For: </label>
-                  <input onChange={this.handleInputChange} name="roomieName" type="text" className="form-control" id="selectroomie" placeholder="Enter Name of Roomie" />
+                  <input onChange={this.handleInputChange} value={this.state.roomieName} name="roomieName" type="text" className="form-control" id="selectroomie" placeholder="Enter Name of Roomie" />
                 </div>
                 <div className="form-group">
                   <label htmlFor="details">Chore Details</label>
-                  <textarea onChange={this.handleInputChange} name="details" className="form-control" id="details" rows="3"></textarea>
+                  <textarea onChange={this.handleInputChange} value={this.state.details} name="details" className="form-control" id="details" rows="3"></textarea>
                 </div>
                 <div className="form-group">
                   <label htmlFor="date">Chore Due Date</label>
-                  <input onChange={this.handleInputChange} name="date" type="date" className="form-control" id="date" />
+                  <input onChange={this.handleInputChange} value={this.state.date} name="date" type="date" className="form-control" id="date" />
                 </div>
 
                 <button onClick={this.handleFormSubmit} type="submit" className="btn mb-2" style={{ fontFamily: "'Alegreya Sans SC', sans-serif" }}>Confirm chore</button>
