@@ -14,8 +14,13 @@ import Modal from 'react-responsive-modal';
 BigCalendar.setLocalizer(BigCalendar.momentLocalizer(moment))
 
 class Calendar extends Component {
+<<<<<<< HEAD
   state = {
     events: [
+=======
+  state={
+    events:[
+>>>>>>> dev
       {
         //*******There is something to note the months are displayed 1 back which means if you want 
         //to display for month 8 then code must be for month 7 */
@@ -34,6 +39,7 @@ class Calendar extends Component {
         title: "Electricity Bill Due"
       },
       {
+<<<<<<< HEAD
         //start: new Date(moment().add(7,'days')),
         //end: new Date(moment().add(7, "days")),
         start: new Date(2018, 7, 7),
@@ -49,6 +55,9 @@ class Calendar extends Component {
       },
       {
 
+=======
+       
+>>>>>>> dev
         //start: new Date(moment().add(7,'days')),
         // end: new Date(moment().add(10, "days")),
         start: new Date(2018, 7, 18),
