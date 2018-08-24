@@ -2,102 +2,117 @@
 import React, { Component } from "react";
 import ReactDOM from 'react-dom';
 import "./chat.css";
-var createReactClass = require('create-react-class');
+import API from "../../utils/API";
 
 
+import Container from "../../components/Container";
+import Row from "../../components/Row";
+import Col from "../../components/Col";
+import { List, ListItem } from "../../components/List";
+import { Input,  FormBtn } from "../../components/Form";
+import { Link } from "react-router-dom";
 
-var commentData = [
-  {
-    author: "Shawn Spencer",
-    text: "I've heard it both ways"
-  },
-  {
-    author: "Burton Guster",
-    text: "You hear about Pluto? That's messed up"
+
+class CommentBox extends Component {
+  state = {
+    smacks: [],
+    authorName: "",
+    authorComment: ""
+  };
+
+  componentDidMount() {
+    this.loadSmacks();
   }
-];
-var CommentBox = createReactClass({
-  getInitialState: function () {
-    return {
-      data: commentData
-    }
-  },
-  handleCommentSubmit: function (comment) {
-    this.state.data.push(comment);
-    var comments = this.state.data;
-    var newComments = comments.concat([comment]);
-    this.setState({ data: newComments });
-  },
-  render: function () {
+
+  loadSmacks = () => {
+    console.log("function running")
+    API.getSmacks()
+      .then(res =>
+        this.setState({ smacks: res.data, authorName: "", authorComment: "" })
+      )
+      .catch(err => console.log(err));
+  };
+
+  
+
+  handleInputChange = event => {
+    const { name, value } = event.target;
+    this.setState({
+      [name]: value
+    });
+  };
+
+  handleFormSubmit = event => {
+    event.preventDefault();
+    console.log("adding to db")
+    //if (this.state.authorName && this.state.authorComment) {
+      console.log("here")
+      console.log(this.state.authorName)
+      API.saveSmacks({
+        authorName: this.state.authorName,
+        authorComment: this.state.authorComment
+      })
+        .then(res => this.loadSmacks())
+        .catch(err => console.log(err));
+    //}
+  };
+
+  render() {
     return (
-      <div className="comment-box">
-        <CommentForm data={this.props.data} onCommentSubmit={this.handleCommentSubmit} />
-        <CommentList data={this.state.data} />
-      </div>
+      <Container fluid>
+        <Row>
+          <Col size="md-6">
+            
+            <form>
+              <Input
+                value={this.state.authorName}
+                onChange={this.handleInputChange}
+                name="authorName"
+                placeholder="Your name"
+              />
+              <Input
+                value={this.state.authorComment}
+                onChange={this.handleInputChange}
+                name="authorComment"
+                placeholder="Message"
+              />
+             
+              <FormBtn
+                // disabled={!(this.state.authorName && this.state.authorComment)}
+                onClick={this.handleFormSubmit}
+              >
+                Post
+              </FormBtn>
+            </form>
+          </Col>
+          <Col size="md-6 sm-12">
+            
+            {this.state.smacks.length ? (
+              <List>
+                {this.state.smacks.map(smack => (
+                  <ListItem key={smack._id}>
+                    
+                      <strong >
+                        {smack.authorName} 
+                        <hr/>
+                         {smack.authorComment}
+                      </strong>
+                   
+                   
+                  </ListItem>
+                ))}
+              </List>
+            ) : (
+              <h3>No Results to Display</h3>
+            )}
+          </Col>
+        </Row>
+      </Container>
     );
   }
-});
-var CommentList = createReactClass({
-  render: function () {
-    return (
-      <div className="comment-list">
-        {this.props.data.map(function (c) {
-          return (
-            <Comment author={c.author} text={c.text} />
-          );
-        })}
-      </div>
-    );
-  }
-});
-var CommentForm = createReactClass({
-  handleSubmit: function (e) {
-    e.preventDefault();
-    var authorVal = e.target[0].value.trim();
-    var textVal = e.target[1].value.trim();
-    if (!textVal || !authorVal) {
-      return;
-    }
-    this.props.onCommentSubmit({ author: authorVal, text: textVal });
-    e.target[0].value = '';
-    e.target[1].value = '';
-    return;
-  },
-  render: function () {
-    return (
-      <form className="comment-form form-group" onSubmit={this.handleSubmit}>
-        <div className="input-group">
-          <span className="input-group-addon" id="inputName">Name  </span>
-          <input type="text" placeholder="Your name" className="form-control" />
-          <br/>
-        </div>
-        <br/>
-        <div className="input-group">
-          <span className="input-group-addon" id="inputComment">Comment </span>
-          <input type="text" placeholder="Say something..." className="form-control" />
-          <br/>
-        </div>
-        <br/>
-        <input type="submit" value="Post" className="btn" id= "commentPostBtn" />
-        <br/><br/>
-        <hr/>
-      </form>
-    );
-  }
-});
-var Comment = createReactClass({
-  render: function () {
-    return (
-      <div className="comment">
-        <h2 className="author">{this.props.author}</h2>
-        {this.props.text}
-        <hr/>
-      </div>
-    );
-  }
-});
-
-
-
+}
 
 export default CommentBox;
+
+
+
