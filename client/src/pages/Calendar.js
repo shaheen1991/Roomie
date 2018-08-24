@@ -34,20 +34,6 @@ class Calendar extends Component {
         title:"Electricity Bill Due"
       },
       {
-        //start: new Date(moment().add(7,'days')),
-        //end: new Date(moment().add(7, "days")),
-        start: new Date(2018, 7, 7),
-        end: new Date(2018, 7, 7),
-        title:"Internet Bill Due"
-      },
-      {
-        //start: new Date(moment().add(15,'days')),
-        //end: new Date(moment().add(15, "days")),
-        start: new Date(2018, 7, 15),
-        end: new Date(2018, 7, 15),
-        title:"Water Bill Due"
-      },
-      {
        
         //start: new Date(moment().add(7,'days')),
        // end: new Date(moment().add(10, "days")),
