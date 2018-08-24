@@ -16,6 +16,15 @@ export default {
   },
   // Saves a book to the database
   saveSmacks: function(smackData) {
-    return axios.post("/api/smack", smackData);
+    return axios.post("/api/smack", smackData)
+  },
+  
+  getChores: function() {
+    return axios.get("/api/chores");
+  },
+  saveChores: function(choreData) {
+    console.log(choreData);
+    return axios.post("/api/chores", choreData);
+    
   }
 };
