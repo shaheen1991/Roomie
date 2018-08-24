@@ -14,6 +14,12 @@ const smackSeed = [
     authorName:"Riya",
     authorComment:"Hi friends"
     
+  },
+  {
+    
+    authorName:"Riya",
+    authorComment:"Anyone here"
+    
   }
   
 ];
