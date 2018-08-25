@@ -1,9 +1,15 @@
 import React from "react";
 import "./landing.css";
+import Navbar from "../Navbar/Navbar";
+// import { withRouter } from 'react-router-dom';
+import { withUser } from '../../services/withUser';
 
 const Landing = () => (
+    
     <div id = "landing">
+    
         <div id= "landingLeft">
+        {/* <Navbar /> */}
         <h1 id="welcomeText">Welcome to Roomie</h1>
         </div>
         <div id="landingRight">
@@ -15,4 +21,4 @@ const Landing = () => (
     </div>
 );
 
-export default Landing;
+export default withUser(Landing);

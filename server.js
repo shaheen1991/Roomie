@@ -1,24 +1,34 @@
 const express = require("express");
-const bodyParser = require("body-parser");
+const bodyparser = require('body-parser');
+const morgan = require('morgan');
 const mongoose = require("mongoose");
-const routes = require("./routes");
-const app = express();
 const PORT = process.env.PORT || 3001;
+const app = express();
 
-// Define middleware here
-app.use(bodyParser.urlencoded({ extended: true }));
-app.use(bodyParser.json());
+app.use(morgan('dev'));
+app.use(bodyparser.urlencoded({ extended: true }));
+app.use(bodyparser.json());
+
 // Serve up static assets (usually on heroku)
-// if (process.env.NODE_ENV === "production") {
+if (process.env.NODE_ENV === "production") {
   app.use(express.static("client/build"));
-// }
-// Add routes, both API and view
-app.use(routes);
-
-// Connect to the Mongo DB
-mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/roomie");
-
-// Start the API server
-app.listen(PORT, function() {
-  console.log(`🌎  ==> API Server now listening on PORT ${PORT}!`);
+}
+require('./passport')(app);
+app.use(require('./routes'));
+app.use((error, req, res, next) => {
+  console.error(error);
+  res.json({
+    error
+  })
 });
+
+// configure mongoose
+mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/roomie");
+require('./middleware/mongoose')()
+  .then(() => {
+    app.listen(PORT, () => console.log(`Server up and running on ${PORT}.`));
+  })
+  .catch(err => {
+    console.error('Unable to connect to mongo.')
+    console.error(err);
+  });

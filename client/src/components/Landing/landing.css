@@ -20,11 +20,11 @@ html {
     background-repeat: no-repeat;
     background-size: cover;
     position: fixed;
-    top: 0;
+    /* top: 0; */
     left: 0;
     width: 50%;
     height: 100%;
-    z-index: 9999;
+    /* z-index: 9999; */
 }
 
 #rightPic {

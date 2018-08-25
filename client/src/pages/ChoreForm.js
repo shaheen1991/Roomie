@@ -2,10 +2,12 @@ import React from "react";
 import Container from "../components/Container";
 import Row from "../components/Row";
 import Col from "../components/Col";
-import Navbar1 from "../components/Navbar";
+// import Navbar1 from "../components/Navbar";
 import Footer from "../components/Footer";
 import moment from 'moment';
 import API from "../utils/API"
+import LoginButton from '../components/LoginButton';
+import { withUser } from '../services/withUser';
 
 //adding a form to submit chores,roomiename,details and date
 
@@ -51,10 +53,16 @@ class ChoreForm extends React.Component {
 
 
   render() {
+    const { user } = this.props;
+    const username = user ? user.username : null;
+    const handleLogIn = () => {
+    this.props.history.push('/login');
+    };
     return (
       <div>
-        <Navbar1 />
+        {/* <Navbar1 /> */}
         <Container style={{ marginTop: 30 }}>
+        {user ?
           <Row>
             <Col size="md-12">
               <h1 style={{ fontFamily: "'Alegreya Sans SC', sans-serif" }}>Add Chores</h1>
@@ -82,6 +90,7 @@ class ChoreForm extends React.Component {
               </form>
             </Col>
           </Row>
+          : <LoginButton onClick={handleLogIn} />}
         </Container>
         <Footer />
 
@@ -90,4 +99,4 @@ class ChoreForm extends React.Component {
   }
 }
 
-export default ChoreForm;
+export default withUser(ChoreForm);
