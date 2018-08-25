@@ -6,12 +6,10 @@ import BigCalendar from 'react-big-calendar';
 import Toolbar from 'react-big-calendar';
 import moment from 'moment';
 import "react-big-calendar/lib/css/react-big-calendar.css";
-// import Navbar1 from "../components/Navbar";
+import Navbar1 from "../components/Navbar";
 import Footer from "../components/Footer";
 import Big from "../components/Modal";
 import Modal from 'react-responsive-modal';
-import LoginButton from '../components/LoginButton';
-import { withUser } from '../services/withUser';
 
 BigCalendar.setLocalizer(BigCalendar.momentLocalizer(moment))
 
@@ -67,14 +65,9 @@ class Calendar extends Component {
   }
 
   render() {
-    const { user } = this.props;
-    const username = user ? user.username : null;
-    const handleLogIn = () => {
-    this.props.history.push('/login');
-    };
     return (
       <div>
-        {/* <Navbar1 /> */}
+        <Navbar1 />
 
         {
           this.state.bigModal ?
@@ -85,9 +78,9 @@ class Calendar extends Component {
 
       
         <Container style={{ marginTop: 30 }}>
-        {user ?
           <Row>
             <Col size="md-12">
+
               <BigCalendar
                 className="customCal"
                 // className = if classname doesnt work go to node modules, react-big-calendar lib css react-big-calendar.css and change css there but try to use our own classes****
@@ -101,7 +94,6 @@ class Calendar extends Component {
               />
             </Col>
           </Row>
-          : <LoginButton onClick={handleLogIn} />}
         </Container>
         
         <Footer id="footer"/>
@@ -112,4 +104,4 @@ class Calendar extends Component {
 
 };
 
-export default withUser(Calendar);
+export default Calendar;
