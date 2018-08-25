@@ -45,7 +45,7 @@ class CommentBox extends Component {
   handleFormSubmit = event => {
     event.preventDefault();
     console.log("adding to db")
-    //if (this.state.authorName && this.state.authorComment) {
+    ////if (this.state.authorName && this.state.authorComment) {
       console.log("here")
       console.log(this.state.authorName)
       API.saveSmacks({
