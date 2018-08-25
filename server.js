@@ -14,7 +14,9 @@ if (process.env.NODE_ENV === "production") {
   app.use(express.static("client/build"));
 }
 require('./passport')(app);
+
 app.use(require('./routes'));
+
 app.use((error, req, res, next) => {
   console.error(error);
   res.json({
