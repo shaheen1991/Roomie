@@ -6,17 +6,17 @@
   "dependencies": {
     "axios": "^0.16.2",
     "create-react-class": "^15.6.3",
-    "material-ui": "^0.20.2",
     "moment": "^2.22.2",
     "react": "^16.0.0",
     "react-big-calendar": "^0.19.2",
     "react-bootstrap": "^0.32.1",
     "react-dom": "^16.4.2",
-    "react-flexbox-grid": "^2.1.2",
     "react-responsive-modal": "^3.2.0",
-    "react-router": "^4.3.1",
     "react-router-dom": "^4.1.2",
-    "react-scripts": "1.0.14"
+    "react-scripts": "1.0.14",   
+    "material-ui": "^0.20.0",
+    "react-flexbox-grid": "^2.1.2",
+    "react-router": "^4.3.1"
   },
   "scripts": {
     "start": "react-scripts start",
