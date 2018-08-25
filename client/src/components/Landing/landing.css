@@ -1,0 +1,60 @@
+html {
+    height: 100%;
+    width: 100%;
+}
+
+#welcomeText {
+    color: white;
+    margin-top: 30px;
+    margin-left: 30px;
+    font-family: 'Julius Sans One', sans-serif;
+    font-size: 30px;
+    text-shadow: 0px 4px 3px rgba(140,106,78,0.1),
+                 0px 8px 13px rgba(140,106,78,0.1),
+                 0px 18px 23px rgba(140,106,78,0.1);
+}
+/* linear-gradient (to bottom, rgb(248,241,229, 1.0) 0%, rgba(140,106,78, 0.7) 30%, rgba(140,106,78, 0.9) 100%), */
+#landing {
+    background: url("/img/bedroom.jpg");
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: fixed;
+    /* top: 0; */
+    left: 0;
+    width: 50%;
+    height: 100%;
+    /* z-index: 9999; */
+}
+
+#rightPic {
+    background: url("/img/blackandwhite.jpg");
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    position: fixed;
+    padding-left: 20px;
+    padding-right: 20px;
+    top: 5;
+    right: 0;
+    width: 50%;
+    height: 65%;
+    /* z-index: 9999; */
+    margin-top: 60px;
+    margin-left: 40px;
+    margin-right: 60px;
+}
+
+/* #icon {
+    width: 150%;
+} */
+
+#roomieIcon {
+    position: fixed;
+    top: 0;
+    right: 0; 
+    margin-top: 30px;
+    margin-right: 40px;   
+    height: 50px;
+    width: 50px;
+}

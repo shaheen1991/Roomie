@@ -1,4 +1,11 @@
-.customCal{
-    color:orange;
-    border:10px solid blue;
+body {
+    font-family: 'Alegreya Sans SC', sans-serif;
+    font-weight: lighter;
 }
+
+.customCal{
+    color: rgb (66,110,134);
+    border:2px solid rgb(47,49,49);
+}
+
+
