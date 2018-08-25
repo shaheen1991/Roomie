@@ -79,13 +79,7 @@ class Calendar extends Component {
             </Modal> : false
         }
 
-<<<<<<< HEAD
-      
         <Container style={{ paddingTop: 100 }}>
-=======
-
-        <Container style={{ marginTop: 30 }}>
->>>>>>> c8f5445fc38a6bd4c85f2d500065a0cc47c0da6d
           <Row>
             <Col size="md-12">
 
