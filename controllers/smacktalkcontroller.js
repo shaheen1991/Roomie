@@ -1,6 +1,6 @@
 const db = require("../models");
 
-// Defining methods for the booksController
+// Defining methods for the smacksController
 module.exports = {
   findAll: function(req, res) {
     console.log("in db");
