@@ -1,63 +1,25 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { withRouter } from 'react-router-dom';
-import LoginButton from '../LoginButton';
-import LoginMenu from '../LoginMenu';
-import axios from 'axios';
-import { update } from '../../services/withUser';
 import "./Navbar.css";
 
-
-const Navbar = props => 
-
-  {
-    const { user } = props;
-    const username = user ? user.username : null;
-    const handleLogIn = () => {
-      props.history.push('/login');
-    };
-    const handleLogOut = () => {
-      axios.delete('/api/auth')
-        .then(() => {
-          update(null);
-        })
-        .catch((err) => {
-          console.log(err);
-        });
-    }
-    return(
+// Depending on the current path, this component sets the "active" class on the appropriate navigation link item
+const Navbar = props => (
   <nav className="navbar navbar-expand-lg navbar-light bg-light">
-    <Link className="navbar-brand" to="/">
+    <div className="navbar-brand">
       Roomie
-    </Link>
+    </div>
     <div>
       <ul className="navbar-nav">
-      <li
+        <li
           className={
             window.location.pathname === "/calendar"
               ? "nav-item active"
               : "nav-item"
           }
         >
-        {user ?
           <Link to="/calendar" className="nav-link">
             Calendar
           </Link>
-          : <div/>}
-        </li>
-        <li
-          className={
-            window.location.pathname === "/" ||
-            window.location.pathname === "/home"
-              ? "nav-item active"
-              : "nav-item"
-          }
-        >
-        {user ?
-          <Link to="/choreform" className="nav-link">
-           Chore Form
-          </Link>
-          : <div/>}
         </li>
         <li
           className={
@@ -66,19 +28,28 @@ const Navbar = props =>
               : "nav-item"
           }
         >
-        {user ?
           <Link to="/smacktalk" className="nav-link">
-            Smack Talk
+            SmackTalk
           </Link>
-          : <div/>}
+        </li>
+        <li
+          className={
+            window.location.pathname === "/choreform"
+              ? "nav-item active"
+              : "nav-item"
+          }
+        >
+          <Link to="/choreform" className="nav-link">
+            Chores
+          </Link>
         </li>
       </ul>
+      
+      <div>
+        <img id= "roomieIconNav" src="/img/roomieIconTrans.png"/>
+      </div>
     </div>
-      {user ?
-       <LoginMenu username={username} onLogOut={handleLogOut} />
-       : <LoginButton onClick={handleLogIn} />}
-  </nav>)
-  }
+  </nav>
+);
 
-
-export default withRouter(Navbar);
+export default Navbar;

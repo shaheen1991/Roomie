@@ -1,15 +1,8 @@
 nav.navbar {
       font-family: 'Alegreya Sans SC', sans-serif;
       font-weight: lighter;
-      /* z-index: 999999; */
 }
-/* div[role=menu] {
-  z-index: 9999999999999;
-  position: relative;
-} */
-.menu1 {
-  float: right;
-}
+
 
 nav.navbar.navbar-default {
   margin-bottom: 0;
