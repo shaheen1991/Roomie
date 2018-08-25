@@ -60,7 +60,7 @@ class CommentBox extends Component {
   render() {
     return (
       <Container fluid>
-        <Row>
+        <Row className="addComment">
           <Col size="md-6">
             
             <form>

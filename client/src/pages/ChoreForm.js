@@ -54,10 +54,10 @@ class ChoreForm extends React.Component {
     return (
       <div>
         <Navbar1 />
-        <Container style={{ marginTop: 30 }}>
+        <Container>
           <Row>
             <Col size="md-12">
-              <h1 style={{ fontFamily: "'Alegreya Sans SC', sans-serif" }}>Add Chores</h1>
+              <h1 style={{ fontFamily: "'Alegreya Sans SC', sans-serif", paddingTop: 100}}>Add Chores</h1>
 
 
               <form id="choreCont">
