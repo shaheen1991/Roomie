@@ -5,59 +5,59 @@ import Col from "../components/Col";
 import BigCalendar from 'react-big-calendar';
 import Toolbar from 'react-big-calendar';
 import moment from 'moment';
+import API from "../utils/API";
 import "react-big-calendar/lib/css/react-big-calendar.css";
 import Navbar1 from "../components/Navbar";
 import Footer from "../components/Footer";
 import Big from "../components/Modal";
 import Modal from 'react-responsive-modal';
 
+
 BigCalendar.setLocalizer(BigCalendar.momentLocalizer(moment))
 
 class Calendar extends Component {
-  state={
+    state = {
+    events: [],
+    bigModal: false
+ /*  state={
     events:[
-      {
-        //*******There is something to note the months are displayed 1 back which means if you want 
-        //to display for month 8 then code must be for month 7 */
-        //change to automatically make rent due the first day of the moment by utilizing moment (need to research more!) use regular javascript and maybe math but best to do this on the server side
-        //start: new Date(moment().add(1,'days')),
-        //end: new Date(moment().add(1, "days")), 
-        start: new Date(2018, 7, 1),
-        end: new Date(2018, 7, 1),
+      { 
+        start: new Date(moment('2018-08-29T00:00:00.000Z').format('MM-DD-YYYY')),
+        end: new Date(moment('2018-08-29T00:00:00.000Z').format('MM-DD-YYYY')),
         title: "Rent Due"
       },
       {
-        //start: new Date(moment().add(11,'days')),
-        //end: new Date(moment().add(11, "days")),
         start: new Date(2018, 7, 5),
         end: new Date(2018, 7, 5),
         title: "Electricity Bill Due"
       },
       {
-       
-        //start: new Date(moment().add(7,'days')),
-        // end: new Date(moment().add(10, "days")),
         start: new Date(2018, 7, 18),
         end: new Date(2018, 7, 22),
         title: "Joanne's Vacation"
       }
     ],
+ */
 
-    bigModal: false
   }
-  //events = state
-  // retrieve from database and iterate through changing state dynamically.
-  // handleGetEvents = ()=>{
-  //   this.setState
-  // }
 
-  /*   rentDueDate = () => {
-      
-    } */
+  componentDidMount() {
+    this.loadChores();
+    console.log(this.state.events);
+  }
+
+  loadChores = () => {
+    API.getChores()
+      .then(res =>
+        this.setState({ events: res.data})
+      )
+      .catch(err => console.log(err));
+  };
+
+
 
   handleOpenModal = () => {
     this.setState({ bigModal: true });
-    // somehow render the modal
   };
 
   handleCloseModal = () => {
@@ -65,13 +65,18 @@ class Calendar extends Component {
   }
 
   render() {
+    
     return (
       <div>
         <Navbar1 />
 
         {
           this.state.bigModal ?
-            <Modal open={true} onClose={this.handleCloseModal}>
+            <Modal 
+              open={true} 
+              onClose={this.handleCloseModal}
+            >
+              
               <Big />
             </Modal> : false
         }
