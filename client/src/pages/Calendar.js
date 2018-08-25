@@ -16,29 +16,28 @@ import Modal from 'react-responsive-modal';
 BigCalendar.setLocalizer(BigCalendar.momentLocalizer(moment))
 
 class Calendar extends Component {
-    state = {
+  state = {
     events: [],
     bigModal: false
- /*  state={
-    events:[
-      { 
-        start: new Date(moment('2018-08-29T00:00:00.000Z').format('MM-DD-YYYY')),
-        end: new Date(moment('2018-08-29T00:00:00.000Z').format('MM-DD-YYYY')),
-        title: "Rent Due"
-      },
-      {
-        start: new Date(2018, 7, 5),
-        end: new Date(2018, 7, 5),
-        title: "Electricity Bill Due"
-      },
-      {
-        start: new Date(2018, 7, 18),
-        end: new Date(2018, 7, 22),
-        title: "Joanne's Vacation"
-      }
-    ],
- */
-
+    /*  state={
+       events:[
+         { 
+           start: new Date(moment('2018-08-29T00:00:00.000Z').format('MM-DD-YYYY')),
+           end: new Date(moment('2018-08-29T00:00:00.000Z').format('MM-DD-YYYY')),
+           title: "Rent Due"
+         },
+         {
+           start: new Date(2018, 7, 5),
+           end: new Date(2018, 7, 5),
+           title: "Electricity Bill Due"
+         },
+         {
+           start: new Date(2018, 7, 18),
+           end: new Date(2018, 7, 22),
+           title: "Joanne's Vacation"
+         }
+       ],
+    */
   }
 
   componentDidMount() {
@@ -49,7 +48,8 @@ class Calendar extends Component {
   loadChores = () => {
     API.getChores()
       .then(res =>
-        this.setState({ events: res.data})
+        // console.log(res.data)
+        this.setState({ events: res.data, bigModal: false })
       )
       .catch(err => console.log(err));
   };
@@ -63,23 +63,23 @@ class Calendar extends Component {
   }
 
   render() {
-    
+
     return (
       <div>
         <Navbar1 />
 
         {
           this.state.bigModal ?
-            <Modal 
-              open={true} 
+            <Modal
+              open={true}
               onClose={this.handleCloseModal}
             >
-              
+
               <Big />
             </Modal> : false
         }
 
-      
+
         <Container style={{ marginTop: 30 }}>
           <Row>
             <Col size="md-12">
@@ -96,8 +96,8 @@ class Calendar extends Component {
             </Col>
           </Row>
         </Container>
-        
-        <Footer id="footer"/>
+
+        <Footer id="footer" />
       </div>
 
     )
