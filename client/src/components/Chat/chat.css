@@ -1,6 +1,6 @@
-.comment-box {
-    color: rgb (66,110,134);
-    /* border:2px solid rgb(47,49,49);   */
+.addComment {
+    color: rgb(66,110,134);
+    border:2px solid rgb(47,49,49);  
     padding-top: 20px; 
 }
 

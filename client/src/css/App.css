@@ -3,9 +3,15 @@ body {
     font-weight: lighter;
 }
 
-.customCal{
-    color: rgb (66,110,134);
-    border:2px solid rgb(47,49,49);
+html {
+    height: 100%;
+
 }
+
+/* .customCal{
+    color: rgb(66,110,134);
+    border:2px solid rgb(47,49,49);
+} */
+
 
 

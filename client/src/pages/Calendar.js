@@ -80,7 +80,9 @@ class Calendar extends Component {
         }
 
 
-        <Container style={{ marginTop: 30 }}>
+      
+      
+        <Container style={{ paddingTop: 100 }}>
           <Row>
             <Col size="md-12">
 
