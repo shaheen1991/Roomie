@@ -13,28 +13,32 @@ class ChoreForm extends React.Component {
 
   state = {
     // Add Initial State
-    choreName: "",
-    roomieName: "",
+    start: "",
+    end: "",
     details: "",
-    date: ""
+    date: "",
+    choreFor: "",
+    title: ""
   }
 
   handleFormSubmit = event => {
     event.preventDefault();
 
-    if (this.state.choreName && this.state.roomieName && this.state.details && this.state.date) {
+    if (this.state.date && this.state.date && this.state.details && this.state.title) {
       API.saveChores({
-        choreName: this.state.choreName,
-        roomieName: this.state.roomieName,
-        details: this.state.details,
-        date: this.state.date
+        start: this.state.date,
+        end: this.state.date,
+        title: this.state.title,
+        choreFor: this.state.choreFor,
+        details: this.state.details
       })
         .then(
           this.setState({
-            choreName: "",
-            roomieName: "",
+            start: "",
+            end: "",
+            date: "",
             details: "",
-            date: ""
+            choreFor: ""
           })
         )
         .catch(err => console.log(err));
@@ -63,11 +67,11 @@ class ChoreForm extends React.Component {
               <form id="choreCont">
                 <div className="form-group">
                   <label htmlFor="chores">Chore</label>
-                  <input onChange={this.handleInputChange} value={this.state.choreName} name="choreName" type="text" className="form-control" id="chores" placeholder="New chore name" />
+                  <input onChange={this.handleInputChange} value={this.state.title} name="title" type="text" className="form-control" id="chores" placeholder="New chore name" />
                 </div>
                 <div className="form-group">
                   <label htmlFor="selectroomie">Chore For: </label>
-                  <input onChange={this.handleInputChange} value={this.state.roomieName} name="roomieName" type="text" className="form-control" id="selectroomie" placeholder="Enter Name of Roomie" />
+                  <input onChange={this.handleInputChange} value={this.state.choreFor} name="choreFor" type="text" className="form-control" id="selectroomie" placeholder="Enter Name of Roomie" />
                 </div>
                 <div className="form-group">
                   <label htmlFor="details">Chore Details</label>
