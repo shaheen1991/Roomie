@@ -1,12 +1,13 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { withRouter } from 'react-router-dom';
+import "./Navbar.css";
 import LoginButton from '../LoginButton';
 import LoginMenu from '../LoginMenu';
+
 import axios from 'axios';
 import { update } from '../../services/withUser';
-import "./Navbar.css";
-
+// import AppBar from "../../../node_modules/material-ui/AppBar";
 
 const Navbar = props => 
 
@@ -19,6 +20,8 @@ const Navbar = props =>
     const handleLogOut = () => {
       axios.delete('/api/auth')
         .then(() => {
+          // unsets the currently logged in user. all components wrapped in withUser
+          // will be updated with a null user and rerender accordingly
           update(null);
         })
         .catch((err) => {
@@ -74,9 +77,12 @@ const Navbar = props =>
         </li>
       </ul>
     </div>
+
       {user ?
        <LoginMenu username={username} onLogOut={handleLogOut} />
        : <LoginButton onClick={handleLogIn} />}
+  
+        
   </nav>)
   }
 
