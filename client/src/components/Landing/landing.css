@@ -39,7 +39,7 @@ html {
     right: 0;
     width: 50%;
     height: 65%;
-    z-index: 9999;
+    /* z-index: 9999; */
     margin-top: 60px;
     margin-left: 40px;
     margin-right: 60px;
