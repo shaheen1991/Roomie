@@ -3,7 +3,6 @@ import axios from "axios";
 export default {
   // Gets all books
   getSmacks: function() {
-    console.log("here");
     return axios.get("/api/smack");
   },
   // Gets the book with the given id
@@ -18,7 +17,8 @@ export default {
   saveSmacks: function(smackData) {
     return axios.post("/api/smack", smackData)
   },
-  
+
+  // Chore API 
   getChores: function() {
     return axios.get("/api/chores");
   },
