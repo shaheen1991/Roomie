@@ -54,8 +54,6 @@ class Calendar extends Component {
       .catch(err => console.log(err));
   };
 
-
-
   handleOpenModal = () => {
     this.setState({ bigModal: true });
   };
@@ -87,8 +85,6 @@ class Calendar extends Component {
             <Col size="md-12">
 
               <BigCalendar
-                className="customCal"
-                // className = if classname doesnt work go to node modules, react-big-calendar lib css react-big-calendar.css and change css there but try to use our own classes****
                 defaultDate={new Date()}
                 defaultView="month"
                 selectable
