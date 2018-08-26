@@ -17,7 +17,6 @@ BigCalendar.setLocalizer(BigCalendar.momentLocalizer(moment))
 
 class Calendar extends Component {
   state = {
-    addChore: [],
     events: [],
     bigModal: false
     /*  state={
@@ -43,8 +42,7 @@ class Calendar extends Component {
 
 
   componentDidMount() {
-    this.loadChores();
-    console.log(this.state.events);
+    this.loadChores();;
   }
 
   loadChores = () => {
@@ -90,6 +88,7 @@ class Calendar extends Component {
                 defaultDate={new Date()}
                 defaultView="month"
                 selectable
+                views={['month', 'day', 'agenda']}
                 //instead of alert, make a modal
                 onSelectEvent={this.handleOpenModal}
                 events={this.state.events}
