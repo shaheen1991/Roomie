@@ -17,6 +17,7 @@ BigCalendar.setLocalizer(BigCalendar.momentLocalizer(moment))
 
 class Calendar extends Component {
   state = {
+    addChore: [],
     events: [],
     bigModal: false
     /*  state={
@@ -39,6 +40,7 @@ class Calendar extends Component {
        ],
     */
   }
+
 
   componentDidMount() {
     this.loadChores();
