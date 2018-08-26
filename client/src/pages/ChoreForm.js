@@ -18,7 +18,8 @@ class ChoreForm extends React.Component {
     details: "",
     date: "",
     choreFor: "",
-    title: ""
+    title: "",
+    roomies: ["Alex", "Joanne", "Riya", "Shaheen"]
   }
 
   handleFormSubmit = event => {
@@ -38,7 +39,8 @@ class ChoreForm extends React.Component {
             end: "",
             date: "",
             details: "",
-            choreFor: ""
+            choreFor: "",
+            roomies: ["Alex", "Joanne", "Riya", "Shaheen"]
           })
         )
         .catch(err => console.log(err));
