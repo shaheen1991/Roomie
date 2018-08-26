@@ -24,10 +24,10 @@ class ChoreForm extends React.Component {
 
   handleFormSubmit = event => {
     event.preventDefault();
-    let assignChore = Math.floor(Math.random() * this.state.roomies.length);
-    let assignedRoomie = this.state.roomies[assignChore];
+    let roomieNumber = Math.floor(Math.random() * this.state.roomies.length);
+    let assignedRoomie = this.state.roomies[roomieNumber];
 
-    console.log(assignChore);
+    console.log(roomieNumber);
     console.log(assignedRoomie);
 
     if (this.state.date && this.state.date && this.state.details && this.state.title) {
