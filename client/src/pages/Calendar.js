@@ -17,10 +17,10 @@ BigCalendar.setLocalizer(BigCalendar.momentLocalizer(moment))
 class Calendar extends Component {
   state = {
     events: [],
-    choreFor: "",
-    choreDetails: "",
     bigModal: false,
-    eventsForModal: {}
+    choreTitle: "",
+    choreDetails: "",
+    choreRoomie: ""
   }
 
 
@@ -37,9 +37,20 @@ class Calendar extends Component {
       .catch(err => console.log(err));
   };
 
-  handleOpenModal = () => {
-    this.setState({ bigModal: true });
-  };
+  handleOpenModal = (event) => {
+    let choreTitle = event.title;
+    let choreRoomie = event.choreFor;
+    let choreDetails = event.details;
+    
+    this.setState(
+      {
+        choreTitle: choreTitle,
+        choreRoomie: choreRoomie,
+        choreDetails: choreDetails
+      },
+      this.setState({ bigModal: true })
+    )
+  }
 
   handleCloseModal = () => {
     this.setState({ bigModal: false });
@@ -58,7 +69,11 @@ class Calendar extends Component {
               onClose={this.handleCloseModal}
             >
 
-              <Big />
+              <Big
+                choreTitle={this.state.choreTitle}
+                choreRoomie={this.state.choreRoomie}
+                choreDetails={this.state.choreDetails}
+              />
             </Modal> : false
         }
 
@@ -72,7 +87,6 @@ class Calendar extends Component {
                 defaultView="month"
                 selectable
                 views={['month', 'day', 'agenda']}
-                //instead of alert, make a modal
                 onSelectEvent={this.handleOpenModal}
                 events={this.state.events}
                 style={{ height: "100vh" }}
