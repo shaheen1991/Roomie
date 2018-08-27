@@ -3,7 +3,7 @@ import Container from "../components/Container";
 import Row from "../components/Row";
 import Col from "../components/Col";
 import BigCalendar from 'react-big-calendar';
-import Toolbar from 'react-big-calendar';
+// import Toolbar from 'react-big-calendar';
 import moment from 'moment';
 import API from "../utils/API";
 import "react-big-calendar/lib/css/react-big-calendar.css";
@@ -18,31 +18,15 @@ BigCalendar.setLocalizer(BigCalendar.momentLocalizer(moment))
 class Calendar extends Component {
   state = {
     events: [],
-    bigModal: false
-    /*  state={
-       events:[
-         { 
-           start: new Date(moment('2018-08-29T00:00:00.000Z').format('MM-DD-YYYY')),
-           end: new Date(moment('2018-08-29T00:00:00.000Z').format('MM-DD-YYYY')),
-           title: "Rent Due"
-         },
-         {
-           start: new Date(2018, 7, 5),
-           end: new Date(2018, 7, 5),
-           title: "Electricity Bill Due"
-         },
-         {
-           start: new Date(2018, 7, 18),
-           end: new Date(2018, 7, 22),
-           title: "Joanne's Vacation"
-         }
-       ],
-    */
+    choreFor: "",
+    choreDetails: "",
+    bigModal: false,
+    eventsForModal: {}
   }
 
 
   componentDidMount() {
-    this.loadChores();;
+    this.loadChores();
   }
 
   loadChores = () => {
