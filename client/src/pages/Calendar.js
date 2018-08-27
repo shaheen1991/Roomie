@@ -3,7 +3,6 @@ import Container from "../components/Container";
 import Row from "../components/Row";
 import Col from "../components/Col";
 import BigCalendar from 'react-big-calendar';
-// import Toolbar from 'react-big-calendar';
 import moment from 'moment';
 import API from "../utils/API";
 import "react-big-calendar/lib/css/react-big-calendar.css";
