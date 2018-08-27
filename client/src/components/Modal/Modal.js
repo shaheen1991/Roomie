@@ -1,5 +1,6 @@
 import React from 'react';
 import "./Modal.css";
+import API from '../../utils/API.js';
 
 export default class Big extends React.Component {
   constructor(props) {
@@ -8,17 +9,26 @@ export default class Big extends React.Component {
     this.state = {
       title: props.choreTitle,
       roomie: props.choreRoomie,
-      details: props.choreDetails
+      details: props.choreDetails,
+      choreId: props.choreId
     }
   }
 
+  deleteChore = () => {
+    API.deleteChore(this.state.choreId)
+      .then(res => window.location.reload())
+      .catch(err => console.log(err))
+  }
+
   render() {
+
     return (
-      <div className="example">
-       <h1>This is the modal. Put content below</h1>
-       <h3>{this.state.title}</h3>
-       <h3>{this.state.roomie}</h3>
-       <h3>{this.state.details}</h3>
+      <div className="example text-center">
+       <h1>Put content below</h1>
+       <h3 className="text-center">{this.state.title}</h3>
+       <h3 className="text-center">{this.state.roomie}</h3>
+       <h3 className="text-center">{this.state.details}</h3>
+       <button type="button" className="btn btn-danger center-block" onClick={this.deleteChore}>Delete Chore</button>
       </div>
     );
   }

@@ -20,7 +20,8 @@ class Calendar extends Component {
     bigModal: false,
     choreTitle: "",
     choreDetails: "",
-    choreRoomie: ""
+    choreRoomie: "",
+    choreId: ""
   }
 
 
@@ -41,12 +42,14 @@ class Calendar extends Component {
     let choreTitle = event.title;
     let choreRoomie = event.choreFor;
     let choreDetails = event.details;
+    let choreId = event._id;
     
     this.setState(
       {
         choreTitle: choreTitle,
         choreRoomie: choreRoomie,
-        choreDetails: choreDetails
+        choreDetails: choreDetails,
+        choreId: choreId
       },
       this.setState({ bigModal: true })
     )
@@ -73,6 +76,7 @@ class Calendar extends Component {
                 choreTitle={this.state.choreTitle}
                 choreRoomie={this.state.choreRoomie}
                 choreDetails={this.state.choreDetails}
+                choreId={this.state.choreId}
               />
             </Modal> : false
         }

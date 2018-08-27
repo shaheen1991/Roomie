@@ -18,13 +18,22 @@ export default {
     return axios.post("/api/smack", smackData)
   },
 
+
+
+
+
+
   // Chore API 
   getChores: function() {
     return axios.get("/api/chores");
   },
+
   saveChores: function(choreData) {
     console.log(choreData);
     return axios.post("/api/chores", choreData);
-    
+  },
+
+  deleteChore: function(id) {
+    return axios.delete("/api/chores/" + id);
   }
 };
