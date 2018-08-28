@@ -78,10 +78,6 @@ class ChoreForm extends React.Component {
                   <label htmlFor="chores">Chore</label>
                   <input onChange={this.handleInputChange} value={this.state.chore} name="chore" type="text" className="form-control" id="chores" placeholder="New chore name" />
                 </div>
-                {/* <div className="form-group">
-                  <label htmlFor="selectroomie">Chore For: </label>
-                  <input onChange={this.handleInputChange} value={this.state.choreFor} name="choreFor" type="text" className="form-control" id="selectroomie" placeholder="Enter Name of Roomie" />
-                </div> */}
                 <div className="form-group">
                   <label htmlFor="details">Chore Details</label>
                   <textarea onChange={this.handleInputChange} value={this.state.details} name="details" className="form-control" id="details" rows="3"></textarea>
