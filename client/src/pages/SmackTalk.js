@@ -5,14 +5,16 @@ import Col from "../components/Col";
 import Navbar1 from "../components/Navbar";
 import Footer from "../components/Footer";
 import CommentBox from "../components/Chat";
+import Wrapper from "../components/Wrapper";
 
 const SmackTalk = () => (
   <div>
+  <Wrapper>
     <Navbar1 />
-    <Container style={{ marginTop: 30 }}>
+    <Container>
       <Row>
         <Col size="md-12">
-          <h1 style={{fontFamily:"'Alegreya Sans SC', sans-serif"}}>SmackTalk</h1>
+          <h1 className="smackTalk" style={{paddingTop: 80, paddingBottom: 20}}>SmackTalk</h1>
         </Col>
       </Row>
       <Row>
@@ -23,8 +25,10 @@ const SmackTalk = () => (
         </Col>
       </Row>
     </Container>
-    <Footer />
+    <Footer />  
+    </Wrapper>
   </div>
+
 );
 
 export default SmackTalk;

@@ -11,7 +11,6 @@ import { List, ListItem } from "../../components/List";
 import { Input,  FormBtn } from "../../components/Form";
 // import { Link } from "react-router-dom";
 
-
 class CommentBox extends Component {
   state = {
     smacks: [],
@@ -58,12 +57,11 @@ class CommentBox extends Component {
 
   render() {
     return (
-      <Container fluid>
-        <Row>
-          <Col size="md-6">
-            
+      <Container fluid id="commentCont">
+        <Row className="addComment">
+          <Col size="md-12">
             <form>
-              <Input
+              <Input 
                 value={this.state.authorName}
                 onChange={this.handleInputChange}
                 name="authorName"
@@ -75,8 +73,7 @@ class CommentBox extends Component {
                 name="authorComment"
                 placeholder="Message"
               />
-             
-              <FormBtn
+              <FormBtn id= "postComBtn"
                 // disabled={!(this.state.authorName && this.state.authorComment)}
                 onClick={this.handleFormSubmit}
               >
@@ -84,23 +81,21 @@ class CommentBox extends Component {
               </FormBtn>
             </form>
           </Col>
-          <Col size="md-6 sm-12">
-            
+
+          <Col size="md-10 sm-12" style={{marginLeft: 0, paddingTop: 5}}> 
             {this.state.smacks.length ? (
-              <List>
-                {this.state.smacks.map(smack => (
-                  <ListItem key={smack._id}>
-                    
-                      <strong >
-                        {smack.authorName} 
-                        <hr/>
-                         {smack.authorComment}
-                      </strong>
-                   
-                   
-                  </ListItem>
-                ))}
-              </List>
+              
+          <List>
+            {this.state.smacks.map(smack => (
+              <ListItem key={smack._id}>
+                <strong >
+                  {smack.authorName} 
+                    <hr/>
+                  {smack.authorComment}
+                </strong>
+              </ListItem>
+            ))}
+          </List>
             ) : (
               <h3>No Results to Display</h3>
             )}

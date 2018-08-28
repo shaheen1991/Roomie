@@ -10,6 +10,7 @@ import Navbar1 from "../components/Navbar";
 import Footer from "../components/Footer";
 import Big from "../components/Modal";
 import Modal from 'react-responsive-modal';
+import Wrapper from "../components/Wrapper";
 
 
 BigCalendar.setLocalizer(BigCalendar.momentLocalizer(moment))
@@ -62,7 +63,9 @@ class Calendar extends Component {
   render() {
 
     return (
-      <div>
+      <div> 
+
+        <Wrapper>
         <Navbar1 />
 
         {
@@ -81,25 +84,27 @@ class Calendar extends Component {
             </Modal> : false
         }
 
-
-        <Container style={{ marginTop: 30 }}>
-          <Row>
+        <Container style={{ paddingTop: 80, paddingBottom: 20}}>
+        <h1 className="calendarHead">Calendar</h1>
+          <Row className= "customCal">
             <Col size="md-12">
 
               <BigCalendar
+                
                 defaultDate={new Date()}
                 defaultView="month"
                 selectable
                 views={['month', 'day', 'agenda']}
                 onSelectEvent={this.handleOpenModal}
                 events={this.state.events}
-                style={{ height: "100vh" }}
+                style={{ height: "70vh"}}
               />
             </Col>
           </Row>
         </Container>
 
         <Footer id="footer" />
+        </Wrapper>
       </div>
 
     )

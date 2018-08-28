@@ -58,3 +58,28 @@ html {
     height: 50px;
     width: 50px;
 }
+
+#side {
+    position: fixed;
+    bottom: 0;
+    right: 0; 
+    margin-bottom: 30px;
+    margin-right: 40px;   
+    height: 50px;
+    width: 50px;
+}
+
+#side2 {
+    position: fixed;
+    bottom: 0;
+    left: 0; 
+    margin-bottom: 30px;
+    margin-left: 40px;   
+    height: 50px;
+    width: 50px;    
+}
+
+.wrapper {
+    background-color: white;
+    top: 0;
+}

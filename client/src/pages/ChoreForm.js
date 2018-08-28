@@ -6,6 +6,7 @@ import Navbar1 from "../components/Navbar";
 import Footer from "../components/Footer";
 import moment from 'moment';
 import API from "../utils/API"
+import Wrapper from "../components/Wrapper";
 
 //adding a form to submit chores,roomiename,details and date
 
@@ -66,11 +67,12 @@ class ChoreForm extends React.Component {
   render() {
     return (
       <div>
+        <Wrapper>
         <Navbar1 />
-        <Container style={{ marginTop: 30 }}>
+        <Container style={{height: 700}}>
           <Row>
             <Col size="md-12">
-              <h1 style={{ fontFamily: "'Alegreya Sans SC', sans-serif" }}>Add Chores</h1>
+              <h1 id= "choreForm" >Add Chores</h1>
 
 
               <form id="choreCont">
@@ -93,7 +95,7 @@ class ChoreForm extends React.Component {
           </Row>
         </Container>
         <Footer />
-
+        </Wrapper>
       </div>
     );
   }

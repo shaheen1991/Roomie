@@ -3,9 +3,44 @@ body {
     font-weight: lighter;
 }
 
-.customCal{
-    color: rgb (66,110,134);
-    border:2px solid rgb(47,49,49);
+html {
+    height: 100%;
+
 }
 
+.customCal{
+    color: rgb(66,110,134);
+    background-color: rgba(255,255,255,0.8);
+    padding-top: 15px;
+    padding-bottom: 15px;
+    border-radius: 0.60rem;
 
+}
+
+#choreForm {
+    font-family:'Alegreya Sans SC', sans-serif;
+    padding-left: 12px;
+    padding-top: 80px;
+    padding-bottom: 20px;
+    color: rgb(248,241,229);
+    text-shadow: 0px 4px 3px rgba(140,106,78,0.1),
+                 0px 8px 13px rgba(140,106,78,0.1),
+                 0px 18px 23px rgba(140,106,78,0.1);
+}
+
+#choreCont {
+    background-color: rgba(255,255,255,0.8); 
+    border-radius: 0.60rem;
+    padding: 15px;
+}
+
+.calendarHead {
+    font-family:'Alegreya Sans SC', sans-serif;
+    padding-bottom: 10px;
+    padding-left: 12px;
+    color: rgb(248,241,229);
+    text-shadow: 0px 4px 3px rgba(140,106,78,0.1),
+                 0px 8px 13px rgba(140,106,78,0.1),
+                 0px 18px 23px rgba(140,106,78,0.1);
+
+}

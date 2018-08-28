@@ -4,7 +4,8 @@ import Home from "./pages/Home";
 import SmackTalk from "./pages/SmackTalk";
 import ChoreForm from "./pages/ChoreForm";
 import Calendar from "./pages/Calendar";
-import Wrapper from "./components/Wrapper";
+
+
 //import C from "./pages/chat";
 // import Auth from './Auth/Auth.js';
 // import React, { Component } from 'react';
@@ -14,14 +15,14 @@ import './css/App.css';
 
 const App = () => (
   <Router>
-    <div>
-      <Wrapper>
-        <Route exact path="/" component={Home} />
+      <div>
+    
         <Route exact path="/calendar" component={Calendar} />
         <Route exact path="/smacktalk" component={SmackTalk} />
         <Route exact path="/choreform" component={ChoreForm} />
-      </Wrapper>
-    </div>
+        <Route exact path="/" component={Home} />
+      
+      </div>
   </Router>
 );
 
