@@ -3,7 +3,6 @@ import Container from "../components/Container";
 import Row from "../components/Row";
 import Col from "../components/Col";
 import BigCalendar from 'react-big-calendar';
-import Toolbar from 'react-big-calendar';
 import moment from 'moment';
 import API from "../utils/API";
 import "react-big-calendar/lib/css/react-big-calendar.css";
@@ -18,31 +17,16 @@ BigCalendar.setLocalizer(BigCalendar.momentLocalizer(moment))
 class Calendar extends Component {
   state = {
     events: [],
-    bigModal: false
-    /*  state={
-       events:[
-         { 
-           start: new Date(moment('2018-08-29T00:00:00.000Z').format('MM-DD-YYYY')),
-           end: new Date(moment('2018-08-29T00:00:00.000Z').format('MM-DD-YYYY')),
-           title: "Rent Due"
-         },
-         {
-           start: new Date(2018, 7, 5),
-           end: new Date(2018, 7, 5),
-           title: "Electricity Bill Due"
-         },
-         {
-           start: new Date(2018, 7, 18),
-           end: new Date(2018, 7, 22),
-           title: "Joanne's Vacation"
-         }
-       ],
-    */
+    bigModal: false,
+    choreTitle: "",
+    choreDetails: "",
+    choreRoomie: "",
+    choreId: ""
   }
 
 
   componentDidMount() {
-    this.loadChores();;
+    this.loadChores();
   }
 
   loadChores = () => {
@@ -54,9 +38,22 @@ class Calendar extends Component {
       .catch(err => console.log(err));
   };
 
-  handleOpenModal = () => {
-    this.setState({ bigModal: true });
-  };
+  handleOpenModal = (event) => {
+    let choreTitle = event.title;
+    let choreRoomie = event.choreFor;
+    let choreDetails = event.details;
+    let choreId = event._id;
+    
+    this.setState(
+      {
+        choreTitle: choreTitle,
+        choreRoomie: choreRoomie,
+        choreDetails: choreDetails,
+        choreId: choreId
+      },
+      this.setState({ bigModal: true })
+    )
+  }
 
   handleCloseModal = () => {
     this.setState({ bigModal: false });
@@ -75,7 +72,12 @@ class Calendar extends Component {
               onClose={this.handleCloseModal}
             >
 
-              <Big />
+              <Big
+                choreTitle={this.state.choreTitle}
+                choreRoomie={this.state.choreRoomie}
+                choreDetails={this.state.choreDetails}
+                choreId={this.state.choreId}
+              />
             </Modal> : false
         }
 
@@ -89,7 +91,6 @@ class Calendar extends Component {
                 defaultView="month"
                 selectable
                 views={['month', 'day', 'agenda']}
-                //instead of alert, make a modal
                 onSelectEvent={this.handleOpenModal}
                 events={this.state.events}
                 style={{ height: "100vh" }}

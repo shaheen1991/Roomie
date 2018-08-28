@@ -29,6 +29,7 @@ class ChoreForm extends React.Component {
 
     console.log(roomieNumber);
     console.log(assignedRoomie);
+    alert("Chore was successfully added!")
 
     if (this.state.date && this.state.date && this.state.details && this.state.chore) {
       API.saveChores({
@@ -39,6 +40,7 @@ class ChoreForm extends React.Component {
         details: this.state.details
       })
         .then(
+
           this.setState({
             start: "",
             end: "",
@@ -80,7 +82,7 @@ class ChoreForm extends React.Component {
                   <label htmlFor="selectroomie">Chore For: </label>
                   <input onChange={this.handleInputChange} value={this.state.choreFor} name="choreFor" type="text" className="form-control" id="selectroomie" placeholder="Enter Name of Roomie" />
                 </div> */}
-                <div className="form-group"> 
+                <div className="form-group">
                   <label htmlFor="details">Chore Details</label>
                   <textarea onChange={this.handleInputChange} value={this.state.details} name="details" className="form-control" id="details" rows="3"></textarea>
                 </div>

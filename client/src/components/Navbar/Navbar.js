@@ -46,7 +46,7 @@ const Navbar = props => (
       </ul>
       
       <div>
-        <img id= "roomieIconNav" src="/img/roomieIconTrans.png"/>
+        <img id= "roomieIconNav" alt="main logo" src="/img/roomieIconTrans.png"/>
       </div>
     </div>
   </nav>
