@@ -1,6 +1,5 @@
 
 import React, { Component } from "react";
-import ReactDOM from 'react-dom';
 import "./chat.css";
 import API from "../../utils/API";
 
@@ -10,7 +9,7 @@ import Row from "../../components/Row";
 import Col from "../../components/Col";
 import { List, ListItem } from "../../components/List";
 import { Input,  FormBtn } from "../../components/Form";
-import { Link } from "react-router-dom";
+// import { Link } from "react-router-dom";
 
 class CommentBox extends Component {
   state = {

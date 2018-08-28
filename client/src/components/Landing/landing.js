@@ -8,11 +8,15 @@ const Landing = () => (
         <img id="side2" src="/img/side2.png"/>
         </div>
         <div id="landingRight">
-       <img id="rightPic"/>
+       <img id="rightPic" alt="main pic"/>
        </div>
        <div id="icon">
+<<<<<<< HEAD
        <img id="roomieIcon" src="/img/roomieIconTrans.png"/>
        <img id="side" src="/img/side.png"/>
+=======
+       <img id="roomieIcon" alt="main logo" src="/img/roomieIconTrans.png"/>
+>>>>>>> 34e2c56077ec4c4693aed7fb29136863e96b4b38
        </div>
     </div>
 );
