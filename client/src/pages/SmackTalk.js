@@ -12,7 +12,7 @@ const SmackTalk = () => (
     <Container>
       <Row>
         <Col size="md-12">
-          <h1 style={{fontFamily:"'Alegreya Sans SC', sans-serif", paddingTop: 100}}>SmackTalk</h1>
+          <h1 className="smackTalk" style={{paddingTop:100}}>SmackTalk</h1>
         </Col>
       </Row>
       <Row>
