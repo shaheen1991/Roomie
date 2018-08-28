@@ -56,6 +56,7 @@ class Navbar extends Component{
             Chores
           </Link>
         </a>
+
     </div>
   </nav>
 
