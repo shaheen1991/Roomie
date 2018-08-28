@@ -1,38 +1,35 @@
 .smackTalk {
     font-family:'Alegreya Sans SC', sans-serif;
     padding-left: 12px;
+    color: rgb(248,241,229);
+    text-shadow: 0px 4px 3px rgba(140,106,78,0.1),
+                 0px 8px 13px rgba(140,106,78,0.1),
+                 0px 18px 23px rgba(140,106,78,0.1);
 }
 
 .addComment {
     color: rgb(66,110,134);
-    border:2px solid rgb(47,49,49);  
     padding-top: 20px; 
+    padding-bottom: 20px; 
+    background-color: rgba(255,255,255,0.8);
+    border-radius: 0.60rem;
+    height: 550px;
+}   
+
+#commentCont {
+    margin-left: -20px;
+    height: 100%;
 }
 
 .smackBack {
     background-color: rgb(66,110,134);
 }
 
+#postComBtn {
+    background-color: rgb(66,110,134);
+    border: none;
+}   
 
-  
-/* #commentPostBtn {
-    font-family: 'Alegreya Sans SC', sans-serif;
-    font-weight: lighter;
+.scrollBar {
+    color:  rgb(66,110,134);
 }
-
-.author {
-    font-family: 'Alegreya Sans SC', sans-serif;
-    font-weight: lighter;
-}
-
-#inputName {
-    padding-right: 45px;
-}
-
-#inputComment {
-    padding-right: 20px;
-}
-
-.comment {
-    padding-top: 20px;
-} */
