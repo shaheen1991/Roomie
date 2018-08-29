@@ -12,8 +12,8 @@ const Landing = () => (
        </div>
        <div id="icon">
 
-       <img id="roomieIcon" src="/img/roomieIconTrans.png"/>
-       <img id="side" src="/img/side.png"/>
+       <img id="roomieIcon" alt="roomie icon" src="/img/roomieIconTrans.png"/>
+       <img id="side" alt="side" src="/img/side.png"/>
 
       </div>
     </div>
