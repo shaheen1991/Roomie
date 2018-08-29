@@ -1,24 +1,100 @@
 nav.navbar {
-      font-family: 'Alegreya Sans SC', sans-serif;
-      font-weight: lighter;
-      /* z-index: 99999; */
+  font-family: 'Alegreya Sans SC', sans-serif;
+  font-weight: lighter;
 }
-
 
 nav.navbar.navbar-default {
   margin-bottom: 0;
 }
 
-nav.navbar.navbar-expand-lg{
-  height: 100px;
+.navbar-brand {
+  margin-left: 16px;
+}
+
+.navbar-light .navbar-brand {
+  color: rgb(248,241,229);
+}
+
+.navbar-light .navbar-nav .show>.nav-link, .navbar-light .navbar-nav .active>.nav-link, .navbar-light .navbar-nav .nav-link.show, .navbar-light .navbar-nav .nav-link.active {
+  color: rgb(47,49,49);
 }
 
 #roomieIconNav { 
-  position: fixed;
-  top: 0;
-  right: 0; 
-  margin-top: 30px;
-  margin-right: 40px;   
+  position: absolute;
+  top: 0; 
+  margin-left: 11px;
   height: 50px;
   width: 50px;
+}
+
+/*-----------
+BURGER MENU
+-----------*/
+/* .bm-burger-button{
+  border: 2 px solid blue
+} */
+
+.bm-burger-bars{
+  border:3px solid rgb(66,110,134);
+}
+
+/* Position and sizing of burger button */
+.bm-burger-button {
+  position: fixed;
+  width: 36px;
+  height: 30px;
+  left: 36px;
+  top: 36px;
+}
+ 
+/* Color/shape of burger icon bars */
+.bm-burger-bars {
+  background: #373a47;
+}
+ 
+/* Position and sizing of clickable cross button */
+.bm-cross-button {
+  height: 24px;
+  width: 24px;
+}
+ 
+/* Color/shape of close button cross */
+.bm-cross {
+  background: rgb(248,241,229);
+}
+ 
+/* General sidebar styles */
+.bm-menu {
+  background: rgb(47,49,49);
+  padding: 2.5em 1.5em 0;
+  font-size: 1.15em;
+}
+ 
+/* Morph shape necessary with bubble or elastic */
+.bm-morph-shape {
+  fill: #373a47;
+}
+ 
+/* Wrapper for item list */
+.bm-item-list {
+  color: rgb (248,241,229);
+  padding: 0.8em;
+}
+ 
+/* Individual item */
+.bm-item {
+  display: inline-block;
+}
+ 
+/* Styling of overlay */
+.bm-overlay {
+  background: rgba(0, 0, 0, 0.3);
+}
+
+a:hover {
+  color: rgb(140,106,78);
+}
+
+.nav-link {
+  color: rgb(248,241,229);
 }
