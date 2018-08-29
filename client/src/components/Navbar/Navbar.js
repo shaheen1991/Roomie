@@ -1,55 +1,90 @@
-import React from "react";
+import React, {Component} from "react";
+import { slide as Menu } from 'react-burger-menu';
 import { Link } from "react-router-dom";
 import "./Navbar.css";
+import { withRouter } from 'react-router-dom';
+import LoginButton from '../LoginButton';
+import LoginMenu from '../LoginMenu';
+
+import axios from 'axios';
+import { update } from '../../services/withUser';
 
 // Depending on the current path, this component sets the "active" class on the appropriate navigation link item
-const Navbar = props => (
-  <nav className="navbar navbar-expand-lg navbar-light bg-light">
+const Navbar = props => 
+
+  {
+    const { user } = props;
+    const username = user ? user.username : null;
+    const handleLogIn = () => {
+      props.history.push('/login');
+    };
+    const handleLogOut = () => {
+      axios.delete('/api/auth')
+        .then(() => {
+          // unsets the currently logged in user. all components wrapped in withUser
+          // will be updated with a null user and rerender accordingly
+          update(null);
+        })
+        .catch((err) => {
+          console.log(err);
+        });
+    }
+    return(
+      <Menu>
+  <nav className="navbar navbar-expand-lg navbar-light" >
+    
     <div className="navbar-brand">
       Roomie
     </div>
+
     <div>
-      <ul className="navbar-nav">
-        <li
+        <a
           className={
             window.location.pathname === "/calendar"
               ? "nav-item active"
               : "nav-item"
           }
         >
+        {user ?
           <Link to="/calendar" className="nav-link">
             Calendar
           </Link>
-        </li>
-        <li
+          : <div/>}
+        </a>
+        <a
           className={
             window.location.pathname === "/smacktalk"
               ? "nav-item active"
               : "nav-item"
           }
         >
+        {user ?
           <Link to="/smacktalk" className="nav-link">
             SmackTalk
           </Link>
-        </li>
-        <li
+          : <div/>}
+        </a>
+        <a
           className={
             window.location.pathname === "/choreform"
               ? "nav-item active"
               : "nav-item"
           }
         >
+        {user ?
           <Link to="/choreform" className="nav-link">
             Chores
           </Link>
-        </li>
-      </ul>
-      
-      <div>
-        <img id= "roomieIconNav" src="/img/roomieIconTrans.png"/>
-      </div>
+          : <div/>}
+        </a>
+        {user ?
+       <LoginMenu username={username} onLogOut={handleLogOut} />
+       : <LoginButton onClick={handleLogIn} />}
+
     </div>
   </nav>
-);
+      </Menu>)
 
-export default Navbar;
+  }
+
+export default withRouter(Navbar);

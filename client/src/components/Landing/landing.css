@@ -20,11 +20,11 @@ html {
     background-repeat: no-repeat;
     background-size: cover;
     position: fixed;
-    top: 0;
+    /* top: 0; */
     left: 0;
     width: 50%;
     height: 100%;
-    z-index: 9999;
+    /* z-index: 9999; */
 }
 
 #rightPic {
@@ -39,7 +39,7 @@ html {
     right: 0;
     width: 50%;
     height: 65%;
-    z-index: 9999;
+    /* z-index: 9999; */
     margin-top: 60px;
     margin-left: 40px;
     margin-right: 60px;
@@ -57,4 +57,29 @@ html {
     margin-right: 40px;   
     height: 50px;
     width: 50px;
+}
+
+#side {
+    position: fixed;
+    bottom: 0;
+    right: 0; 
+    margin-bottom: 30px;
+    margin-right: 40px;   
+    height: 50px;
+    width: 50px;
+}
+
+#side2 {
+    position: fixed;
+    bottom: 0;
+    left: 0; 
+    margin-bottom: 30px;
+    margin-left: 40px;   
+    height: 50px;
+    width: 50px;    
+}
+
+.wrapper {
+    background-color: white;
+    top: 0;
 }

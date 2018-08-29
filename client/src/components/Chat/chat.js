@@ -1,16 +1,14 @@
-
 import React, { Component } from "react";
-import ReactDOM from 'react-dom';
 import "./chat.css";
 import API from "../../utils/API";
-
-
 import Container from "../../components/Container";
 import Row from "../../components/Row";
 import Col from "../../components/Col";
 import { List, ListItem } from "../../components/List";
 import { Input,  FormBtn } from "../../components/Form";
-import { Link } from "react-router-dom";
+import Landing from '../Landing/landing';
+import { withUser } from '../../services/withUser';
+import Wrapper from "../Wrapper";
 
 
 class CommentBox extends Component {
@@ -58,13 +56,27 @@ class CommentBox extends Component {
   };
 
   render() {
+    const { user } = this.props;
+    const username = user ? user.username : null;
+    const handleLogIn = () => {
+    this.props.history.push('/login');
+    };
     return (
-      <Container fluid>
-        <Row>
-          <Col size="md-6">
-            
+      <div>
+        {user ?
+      <Wrapper>
+       
+      <Container fluid id="commentCont">
+         <Row>
+          <Col size="md-12">
+           <h1 className="smackTalk" style={{paddingTop: 80, paddingBottom: 20}}>SmackTalk</h1>
+          </Col>
+         </Row>
+         
+        <Row className="addComment">
+          <Col size="md-12">
             <form>
-              <Input
+              <Input 
                 value={this.state.authorName}
                 onChange={this.handleInputChange}
                 name="authorName"
@@ -76,8 +88,7 @@ class CommentBox extends Component {
                 name="authorComment"
                 placeholder="Message"
               />
-             
-              <FormBtn
+              <FormBtn id= "postComBtn"
                 // disabled={!(this.state.authorName && this.state.authorComment)}
                 onClick={this.handleFormSubmit}
               >
@@ -85,34 +96,36 @@ class CommentBox extends Component {
               </FormBtn>
             </form>
           </Col>
-          <Col size="md-6 sm-12">
-            
+
+          <Col size="md-10 sm-12" style={{marginLeft: 0, paddingTop: 5}}> 
             {this.state.smacks.length ? (
-              <List>
-                {this.state.smacks.map(smack => (
-                  <ListItem key={smack._id}>
-                    
-                      <strong >
-                        {smack.authorName} 
-                        <hr/>
-                         {smack.authorComment}
-                      </strong>
-                   
-                   
-                  </ListItem>
-                ))}
-              </List>
+              
+          <List>
+            {this.state.smacks.map(smack => (
+              <ListItem key={smack._id}>
+                <strong >
+                  {smack.authorName} 
+                    <hr/>
+                  {smack.authorComment}
+                </strong>
+              </ListItem>
+            ))}
+          </List>
             ) : (
               <h3>No Results to Display</h3>
             )}
           </Col>
         </Row>
+        
       </Container>
+      </Wrapper>
+      : <Landing/>}
+      </div>
     );
   }
 }
 
-export default CommentBox;
+export default withUser(CommentBox);
 
 
 

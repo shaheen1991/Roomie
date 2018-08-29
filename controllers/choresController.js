@@ -6,6 +6,10 @@ module.exports = {
     db.Chore
       .find(req.query)
       .sort({ date: -1 })
+    console.log("in db chore");
+    db.Chore
+      .find(req.query)
+     
       .then(dbModel => res.json(dbModel))
       .catch(err => res.status(422).json(err));
   },

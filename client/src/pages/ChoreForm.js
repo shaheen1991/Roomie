@@ -2,10 +2,12 @@ import React from "react";
 import Container from "../components/Container";
 import Row from "../components/Row";
 import Col from "../components/Col";
-import Navbar1 from "../components/Navbar";
 import Footer from "../components/Footer";
 import moment from 'moment';
 import API from "../utils/API"
+import Wrapper from "../components/Wrapper";
+import Landing from '../components/Landing/landing';
+import { withUser } from '../services/withUser';
 
 //adding a form to submit chores,roomiename,details and date
 
@@ -13,28 +15,41 @@ class ChoreForm extends React.Component {
 
   state = {
     // Add Initial State
-    choreName: "",
-    roomieName: "",
+    start: "",
+    end: "",
     details: "",
-    date: ""
+    date: "",
+    chore: "",
+    roomies: ["Alex", "Joanne", "Riya", "Shaheen"]
   }
 
   handleFormSubmit = event => {
     event.preventDefault();
+    console.log(this.state.date);
+    let roomieNumber = Math.floor(Math.random() * this.state.roomies.length);
+    let assignedRoomie = this.state.roomies[roomieNumber];
 
-    if (this.state.choreName && this.state.roomieName && this.state.details && this.state.date) {
+    console.log(roomieNumber);
+    console.log(assignedRoomie);
+    alert("Chore was successfully added!")
+
+    if (this.state.date && this.state.date && this.state.details && this.state.chore) {
       API.saveChores({
-        choreName: this.state.choreName,
-        roomieName: this.state.roomieName,
-        details: this.state.details,
-        date: this.state.date
+        start: moment(this.state.date).add(1, 'hour').toDate(),
+        end: moment(this.state.date).add(1, 'hour').toDate(),
+        title: this.state.chore,
+        choreFor: assignedRoomie,
+        details: this.state.details
       })
         .then(
+
           this.setState({
-            choreName: "",
-            roomieName: "",
+            start: "",
+            end: "",
+            date: "",
+            chore: "",
             details: "",
-            date: ""
+            roomies: ["Alex", "Joanne", "Riya", "Shaheen"]
           })
         )
         .catch(err => console.log(err));
@@ -51,30 +66,32 @@ class ChoreForm extends React.Component {
 
 
   render() {
+    const { user } = this.props;
+    const username = user ? user.username : null;
+    const handleLogIn = () => {
+    this.props.history.push('/login');
+    };
     return (
       <div>
-        <Navbar1 />
-        <Container style={{ marginTop: 30 }}>
+        {user ?
+        <Wrapper>
+        <Container style={{height: 700}}>
           <Row>
             <Col size="md-12">
-              <h1 style={{ fontFamily: "'Alegreya Sans SC', sans-serif" }}>Add Chores</h1>
+              <h1 id= "choreForm" >Add Chores</h1>
 
 
               <form id="choreCont">
                 <div className="form-group">
                   <label htmlFor="chores">Chore</label>
-                  <input onChange={this.handleInputChange} value={this.state.choreName} name="choreName" type="text" className="form-control" id="chores" placeholder="New chore name" />
-                </div>
-                <div className="form-group">
-                  <label htmlFor="selectroomie">Chore For: </label>
-                  <input onChange={this.handleInputChange} value={this.state.roomieName} name="roomieName" type="text" className="form-control" id="selectroomie" placeholder="Enter Name of Roomie" />
+                  <input onChange={this.handleInputChange} value={this.state.chore} name="chore" type="text" className="form-control" id="chores" placeholder="New chore name" />
                 </div>
                 <div className="form-group">
                   <label htmlFor="details">Chore Details</label>
                   <textarea onChange={this.handleInputChange} value={this.state.details} name="details" className="form-control" id="details" rows="3"></textarea>
                 </div>
                 <div className="form-group">
-                  <label htmlFor="date">Chore Due Date</label>
+                  <label htmlFor="date">Chore Date</label>
                   <input onChange={this.handleInputChange} value={this.state.date} name="date" type="date" className="form-control" id="date" />
                 </div>
 
@@ -84,10 +101,11 @@ class ChoreForm extends React.Component {
           </Row>
         </Container>
         <Footer />
-
+        </Wrapper>
+        : <Landing/>}
       </div>
     );
   }
 }
 
-export default ChoreForm;
+export default withUser(ChoreForm);
