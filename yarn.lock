@@ -1829,9 +1829,9 @@ react-prop-types@^0.4.0:
   dependencies:
     warning "^3.0.0"
 
-react-responsive-modal@^3.2.0:
-  version "3.2.0"
-  resolved "https://registry.yarnpkg.com/react-responsive-modal/-/react-responsive-modal-3.2.0.tgz#4ced6f6a8d03a53d3da7b871c9d38aedf40f011f"
+react-responsive-modal@^3.3.0:
+  version "3.3.0"
+  resolved "https://registry.yarnpkg.com/react-responsive-modal/-/react-responsive-modal-3.3.0.tgz#adcdb9c1f9b19a6c86faed38f9fcaf7fd3b4c61a"
   dependencies:
     classnames "^2.2.6"
     no-scroll "^2.1.1"
