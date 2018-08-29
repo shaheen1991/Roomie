@@ -7,7 +7,7 @@ import { withUser, update } from './services/withUser';
 import CreateAccountPage from './pages/CreateAccountPage';
 import LoginPage from './pages/LoginPage';
 import NotFoundPage from './pages/NotFoundPage';
-import SmackTalk from "./pages/SmackTalk";
+import SmackTalk from "./pages/Smacktalk";
 import ChoreForm from "./pages/ChoreForm";
 import Calendar from './pages/Calendar';
 import Home from './pages/Home';
