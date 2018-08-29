@@ -8,7 +8,7 @@ const Landing = () => (
         <img id="side2" alt="side2" src="/img/side2.png"/>
         </div>
         <div id="landingRight">
-       <img id="rightPic"/>
+       <img id="rightPic" alt=""/>
        </div>
        <div id="icon">
 
