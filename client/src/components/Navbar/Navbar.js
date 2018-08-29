@@ -1,14 +1,15 @@
-import React from "react";
+import React, {Component} from "react";
+import { slide as Menu } from 'react-burger-menu';
 import { Link } from "react-router-dom";
-import { withRouter } from 'react-router-dom';
 import "./Navbar.css";
+import { withRouter } from 'react-router-dom';
 import LoginButton from '../LoginButton';
 import LoginMenu from '../LoginMenu';
 
 import axios from 'axios';
 import { update } from '../../services/withUser';
-// import AppBar from "../../../node_modules/material-ui/AppBar";
 
+// Depending on the current path, this component sets the "active" class on the appropriate navigation link item
 const Navbar = props => 
 
   {
@@ -29,13 +30,15 @@ const Navbar = props =>
         });
     }
     return(
-  <nav className="navbar navbar-expand-lg navbar-light bg-light">
-    <Link className="navbar-brand" to="/">
+      <Menu>
+  <nav className="navbar navbar-expand-lg navbar-light" >
+    
+    <div className="navbar-brand">
       Roomie
-    </Link>
+    </div>
+
     <div>
-      <ul className="navbar-nav">
-      <li
+        <a
           className={
             window.location.pathname === "/calendar"
               ? "nav-item active"
@@ -47,22 +50,8 @@ const Navbar = props =>
             Calendar
           </Link>
           : <div/>}
-        </li>
-        <li
-          className={
-            window.location.pathname === "/" ||
-            window.location.pathname === "/home"
-              ? "nav-item active"
-              : "nav-item"
-          }
-        >
-        {user ?
-          <Link to="/choreform" className="nav-link">
-           Chore Form
-          </Link>
-          : <div/>}
-        </li>
-        <li
+        </a>
+        <a
           className={
             window.location.pathname === "/smacktalk"
               ? "nav-item active"
@@ -71,20 +60,31 @@ const Navbar = props =>
         >
         {user ?
           <Link to="/smacktalk" className="nav-link">
-            Smack Talk
+            SmackTalk
           </Link>
           : <div/>}
-        </li>
-      </ul>
-    </div>
-
-      {user ?
+        </a>
+        <a
+          className={
+            window.location.pathname === "/choreform"
+              ? "nav-item active"
+              : "nav-item"
+          }
+        >
+        {user ?
+          <Link to="/choreform" className="nav-link">
+            Chores
+          </Link>
+          : <div/>}
+        </a>
+        {user ?
        <LoginMenu username={username} onLogOut={handleLogOut} />
        : <LoginButton onClick={handleLogIn} />}
-  
-        
-  </nav>)
-  }
 
+    </div>
+  </nav>
+      </Menu>)
+
+  }
 
 export default withRouter(Navbar);

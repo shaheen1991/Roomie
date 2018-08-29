@@ -1,16 +1,20 @@
-import React, {Component} from "react";
+import React, { Component } from "react";
 import Container from "../components/Container";
 import Row from "../components/Row";
 import Col from "../components/Col";
 import BigCalendar from 'react-big-calendar';
-import Toolbar from 'react-big-calendar';
 import moment from 'moment';
+import API from "../utils/API";
 import "react-big-calendar/lib/css/react-big-calendar.css";
 import Footer from "../components/Footer";
 import Big from "../components/Modal";
+import Modal from 'react-responsive-modal';
+import Wrapper from "../components/Wrapper";
 import LoginButton from '../components/LoginButton';
 import { withUser } from '../services/withUser';
-import Modal from 'react-responsive-modal';
+import Landing from '../components/Landing/landing';
+
+
 
 BigCalendar.setLocalizer(BigCalendar.momentLocalizer(moment))
 
@@ -71,45 +75,159 @@ class Calendar extends Component {
     const handleLogIn = () => {
     this.props.history.push('/login');
     };
-    return(
-      <div>
-
-          {
-            this.state.bigModal ? 
-              <Modal open={true} onClose={this.handleCloseModal}>
-                <Big />
-              </Modal> : false
-          }
-
+    return (
+            <div>
+              {user ?
+              <Wrapper>
       
-        <Container style={{ marginTop: 30 }}>
-        {user ?
-          <Row>
-            <Col size="md-12">
-            
-              <BigCalendar
-              className="customCal"
-              // className = if classname doesnt work go to node modules, react-big-calendar lib css react-big-calendar.css and change css there but try to use our own classes****
-              defaultDate={new Date()}
-              defaultView="month"
-              selectable  
-              //instead of alert, make a modal
-              onSelectEvent={this.handleOpenModal}  
-              events={this.state.events}
-              style={{height:"100vh"}}
-              />
-            </Col>
-          </Row>
-          : <LoginButton onClick={handleLogIn} />}
-        </Container>
-        
-        
-        <Footer id="footer"/>
-      </div>
-
-    )
-  }
-
-};
+              {
+                this.state.bigModal ?
+                  <Modal
+                    open={true}
+                    onClose={this.handleCloseModal}
+                  >
+      
+                    <Big
+                      choreTitle={this.state.choreTitle}
+                      choreRoomie={this.state.choreRoomie}
+                      choreDetails={this.state.choreDetails}
+                      choreId={this.state.choreId}
+                    />
+                  </Modal> : false
+              }
+      
+              <Container style={{ paddingTop: 80, paddingBottom: 20}}>
+              <h1 className="calendarHead">Calendar</h1>
+                <Row className= "customCal">
+                  <Col size="md-12">
+      
+                    <BigCalendar
+                      
+                      defaultDate={new Date()}
+                      defaultView="month"
+                      selectable
+                      views={['month', 'day', 'agenda']}
+                      onSelectEvent={this.handleOpenModal}
+                      events={this.state.events}
+                      style={{ height: "70vh"}}
+                    />
+                  </Col>
+                </Row>
+              </Container>
+      
+              <Footer id="footer" />
+              </Wrapper>
+              : <Landing/>}
+            </div>
+      
+          )
+        }
+      
+      };
 
 export default withUser(Calendar);
+
+// class Calendar extends Component {
+//   state = {
+//     events: [],
+//     bigModal: false,
+//     choreTitle: "",
+//     choreDetails: "",
+//     choreRoomie: "",
+//     choreId: ""
+//   }
+
+
+//   componentDidMount() {
+//     this.loadChores();
+//   }
+
+//   loadChores = () => {
+//     API.getChores()
+//       .then(res =>
+//         // console.log(res.data)
+//         this.setState({ events: res.data, bigModal: false })
+//       )
+//       .catch(err => console.log(err));
+//   };
+
+//   handleOpenModal = (event) => {
+//     let choreTitle = event.title;
+//     let choreRoomie = event.choreFor;
+//     let choreDetails = event.details;
+//     let choreId = event._id;
+    
+//     this.setState(
+//       {
+//         choreTitle: choreTitle,
+//         choreRoomie: choreRoomie,
+//         choreDetails: choreDetails,
+//         choreId: choreId
+//       },
+//       this.setState({ bigModal: true })
+//     )
+//   }
+
+//   handleCloseModal = () => {
+//     this.setState({ bigModal: false });
+//   }
+
+//   render() {
+//     const { user } = this.props;
+//     const username = user ? user.username : null;
+//     const handleLogIn = () => {
+//     this.props.history.push('/login');
+//     };
+
+//     return (
+//       <div>
+//         {user ?
+//         <Wrapper>
+
+
+//         {
+//           this.state.bigModal ?
+//             <Modal
+//               open={true}
+//               onClose={this.handleCloseModal}
+//             >
+
+//               <Big
+//                 choreTitle={this.state.choreTitle}
+//                 choreRoomie={this.state.choreRoomie}
+//                 choreDetails={this.state.choreDetails}
+//                 choreId={this.state.choreId}
+//               />
+//             </Modal> : false
+//         }
+
+//         <Container style={{ paddingTop: 80, paddingBottom: 20}}>
+//         <h1 className="calendarHead">Calendar</h1>
+//           <Row className= "customCal">
+//             <Col size="md-12">
+
+//               <BigCalendar
+                
+//                 defaultDate={new Date()}
+//                 defaultView="month"
+//                 selectable
+//                 views={['month', 'day', 'agenda']}
+//                 onSelectEvent={this.handleOpenModal}
+//                 events={this.state.events}
+//                 style={{ height: "70vh"}}
+//               />
+//             </Col>
+//           </Row>
+//         </Container>
+
+//         <Footer id="footer" />
+//         </Wrapper>
+//         : <LoginButton onClick={handleLogIn} />}
+//       </div>
+
+//     )
+//   }
+
+// };
+
+// export default withUser(Calendar);

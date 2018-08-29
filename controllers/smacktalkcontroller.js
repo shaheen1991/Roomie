@@ -1,35 +1,29 @@
 const db = require("../models");
 
-// Defining methods for the choresController
+// Defining methods for the smacksController
 module.exports = {
   findAll: function(req, res) {
-    console.log("in db chore");
-    db.Chore
+    console.log("in db");
+    db.Smacktalk
       .find(req.query)
-     
-      .then(dbModel => res.json(dbModel))
-      .catch(err => res.status(422).json(err));
-  },
-  findById: function(req, res) {
-    db.Chore
-      .findById(req.params.id)
       .then(dbModel => res.json(dbModel))
       .catch(err => res.status(422).json(err));
   },
   create: function(req, res) {
-    db.Chore
+    console.log("saving db");
+    db.Smacktalk
       .create(req.body)
       .then(dbModel => res.json(dbModel))
       .catch(err => res.status(422).json(err));
   },
   update: function(req, res) {
-    db.Chore
+    db.Smacktalk
       .findOneAndUpdate({ _id: req.params.id }, req.body)
       .then(dbModel => res.json(dbModel))
       .catch(err => res.status(422).json(err));
   },
   remove: function(req, res) {
-    db.Chore
+    db.Smacktalk
       .findById({ _id: req.params.id })
       .then(dbModel => dbModel.remove())
       .then(dbModel => res.json(dbModel))
