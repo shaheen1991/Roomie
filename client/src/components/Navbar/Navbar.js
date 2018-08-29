@@ -55,16 +55,8 @@ class Navbar extends Component{
           <Link to="/choreform" className="nav-link">
             Chores
           </Link>
-<<<<<<< HEAD
+
         </a>
-=======
-        </li>
-      </ul>
-      
-      <div>
-        <img id= "roomieIconNav" alt="main logo" src="/img/roomieIconTrans.png"/>
-      </div>
->>>>>>> 34e2c56077ec4c4693aed7fb29136863e96b4b38
     </div>
   </nav>
 
