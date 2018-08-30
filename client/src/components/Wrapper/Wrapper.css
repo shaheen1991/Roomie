@@ -1,6 +1,6 @@
 .wrapper {
   min-height: 100%;
   padding-bottom: 100px;
-  background: url("/img/dining.jpg")no-repeat center center fixed;
-  background-size: cover;
+  /* background: url("/img/dining.jpg")no-repeat center center fixed;
+  background-size: cover; */
 }

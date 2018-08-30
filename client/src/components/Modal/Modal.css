@@ -1,9 +1,88 @@
-h1 {
-  margin-top: 15px;
+.example{
+  width: 500px;
+  height: 550px;  
+  background: url("/img/landing4.jpg");
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 30%;
+  height: 91.5%;
+}
+
+#taskCont {
+    width: 450px;
+    background-color: rgba(255,255,255,0.6);
+    height: 100%;
+    padding-top: 50px;
+}
+
+#taskDetails {
+  margin: 15px;
+  margin-top: 50px;
+  margin-bottom: 38px;
+  font-family: 'Julius Sans One', sans-serif;
+  font-size: 50px;
+  font-weight: bolder;
+
+}
+
+#choreTitle {
+  margin: 15px;
+  font-family: 'Julius Sans One', sans-serif;
+  font-size: 25px;
+}
+
+#choreRoomie{
+  margin: 15px;
+  font-family: 'Julius Sans One', sans-serif;
+  font-size: 25px;
+}
+
+#choreDetails{
+  margin: 15px;
+  font-family: 'Julius Sans One', sans-serif;
+  font-size: 25px;
+  margin-bottom: 50px;
+}
+
+.styles_closeButton__20ID4 {
+  top: 0;
+  right: 0;
+  border: none;
+  padding: 0;
+  background-color: transparent;
+  display: flex;
+}
+
+.styles_modal__gNwvD {
+  width: 100%;
+  position: relative;
+  padding: 1.2rem;
+  background: transparent;
+  background-clip: padding-box;
+  box-shadow: 0 12px 15px 0 rgba(0, 0, 0, 0.25);
+  margin-left: 600px;
+}
+
+.styles_overlay__CLSq- {
+  background: rgba(0, 0, 0, 0.75);
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  position: fixed;
+  top: 0;
+  right: 0;
+  overflow-x: hidden;
+  z-index: 1000;
+  padding: 1.2rem;
 }
 
 .btn-danger {
   background-color: rgb(182, 37, 37);
+  margin-bottom: 50px;
 }
 
 .btn-danger:hover {
