@@ -33,3 +33,11 @@
 .scrollBar {
     color:  rgb(66,110,134);
 }
+
+.left{
+    float: left;
+}
+
+.right{
+    float: right;
+}
