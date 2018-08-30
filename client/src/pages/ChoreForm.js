@@ -70,28 +70,30 @@ class ChoreForm extends React.Component {
         <Wrapper>
         <Navbar1 />
         <Container style={{height: 700}}>
-          <Row>
-            <Col size="md-12">
-              <h1 id= "choreForm" >Add Chores</h1>
-
-
+          <Row id="choreRow">     
+          <Col size="md-6">                   
+            <h1 id= "choreForm" >Add Chores</h1>
+            </Col>
+            <Col size="md-6">
               <form id="choreCont">
-                <div className="form-group">
-                  <label htmlFor="chores">Chore</label>
-                  <input onChange={this.handleInputChange} value={this.state.chore} name="chore" type="text" className="form-control" id="chores" placeholder="New chore name" />
+                <div className="form-group choreFormGroup">
+                  <label className="labelChore" htmlFor="chores">Chore</label>
+                  <input onChange={this.handleInputChange} value={this.state.chore} name="chore" type="text" className="form-control choreFormControl" id="chores" placeholder="New chore name" />
                 </div>
-                <div className="form-group">
-                  <label htmlFor="details">Chore Details</label>
-                  <textarea onChange={this.handleInputChange} value={this.state.details} name="details" className="form-control" id="details" rows="3"></textarea>
+                <div className="form-group choreFormGroup">
+                  <label className="labelChore" htmlFor="details">Chore Details</label>
+                  <textarea onChange={this.handleInputChange} value={this.state.details} name="details" className="form-control choreFormControl" id="details" rows="3"></textarea>
                 </div>
-                <div className="form-group">
-                  <label htmlFor="date">Chore Date</label>
-                  <input onChange={this.handleInputChange} value={this.state.date} name="date" type="date" className="form-control" id="date" />
+                <div className="form-group choreFormGroup">
+                  <label className="labelChore" htmlFor="date">Chore Date</label>
+                  <input onChange={this.handleInputChange} value={this.state.date} name="date" type="date" className="form-control choreFormControl" id="date" />
                 </div>
-
-                <button onClick={this.handleFormSubmit} type="submit" className="btn mb-2" style={{ fontFamily: "'Alegreya Sans SC', sans-serif" }}>Confirm chore</button>
+                <button onClick={this.handleFormSubmit} type="submit" className="btn mb-2" style={{ fontFamily: "'Alegreya Sans', sans-serif", color:"white", marginTop: 40}}>Confirm chore</button>
               </form>
             </Col>
+            {/* <Col size="md-6">
+
+            </Col> */}
           </Row>
         </Container>
         <Footer />

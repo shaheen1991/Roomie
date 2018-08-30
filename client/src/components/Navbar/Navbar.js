@@ -14,9 +14,9 @@ class Navbar extends Component{
       <Menu>
   <nav className="navbar navbar-expand-lg navbar-light" >
 
-    {/* <div>
+    <div>
       <img id= "roomieIconNav" src="/img/roomieIconWhite.png"/>
-    </div> */}
+    </div>
     
     <div className="navbar-brand">
       Roomie
@@ -59,16 +59,6 @@ class Navbar extends Component{
         </a>
     </div>
   </nav>
-
-
-
-
-
-
-        {/* <a id="home" className="menu-item" href="/">Home</a>
-        <a id="about" className="menu-item" href="/about">About</a>
-        <a id="contact" className="menu-item" href="/contact">Contact</a>
-        <a onClick={ this.showSettings } className="menu-item--small" href="">Settings</a> */}
       </Menu>
 
 

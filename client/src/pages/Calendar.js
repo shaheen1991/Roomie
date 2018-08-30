@@ -85,7 +85,7 @@ class Calendar extends Component {
         }
 
         <Container style={{ paddingTop: 80, paddingBottom: 20}}>
-        <h1 className="calendarHead">Calendar</h1>
+        {/* <h1 className="calendarHead">Calendar</h1> */}
           <Row className= "customCal">
             <Col size="md-12">
 
