@@ -8,7 +8,6 @@ import moment from 'moment';
 import API from "../utils/API"
 import Wrapper from "../components/Wrapper";
 
-//adding a form to submit chores,roomiename,details and date
 
 class ChoreForm extends React.Component {
 
@@ -89,7 +88,7 @@ class ChoreForm extends React.Component {
                   <input onChange={this.handleInputChange} value={this.state.date} name="date" type="date" className="form-control" id="date" />
                 </div>
 
-                <button onClick={this.handleFormSubmit} type="submit" className="btn mb-2" style={{ fontFamily: "'Alegreya Sans SC', sans-serif" }}>Confirm chore</button>
+                <button onClick={this.handleFormSubmit} type="submit" className="btn mb-2" style={{ fontFamily: "'Alegreya Sans SC', sans-serif"}}>Confirm chore</button>
               </form>
             </Col>
           </Row>
