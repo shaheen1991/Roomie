@@ -89,9 +89,10 @@ class CommentBox extends Component {
             {this.state.smacks.map(smack => (
               <ListItem key={smack._id}>
                 <strong >
-                  {smack.authorName} 
-                    <hr/>
+                 <div className = "talktext"> {smack.authorName} 
+                    <br/><hr/>
                   {smack.authorComment}
+                  </div>
                 </strong>
               </ListItem>
             ))}
