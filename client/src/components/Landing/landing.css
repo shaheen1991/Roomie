@@ -3,12 +3,39 @@ html {
     width: 100%;
 }
 
+
+.sweet-loading {
+    /* position: fixed;
+    left: 0px;
+    top: 0px;
+    width: 100%;
+    height: 100%;
+    z-index: 9999;
+    background: url('/img/blackandwhite.jpg') 50% 50% no-repeat rgb(249,249,249); */
+
+    position: fixed;
+    z-index: 999;
+    height: 2em;
+    width: 2em;
+    overflow: show;
+    margin: auto;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    
+}
 #welcomeText {
-    color: white;
-    margin-top: 30px;
-    margin-left: 30px;
-    font-family: 'Julius Sans One', sans-serif;
-    font-size: 30px;
+    position: fixed;
+    top: 0;
+    right: 0; 
+    color: rgb(47,49,49);
+    margin-top: 163px;
+    margin-right: 95px;
+    text-align: center;
+    font-family: 'Alegreya Sans', sans-serif;
+    font-weight: lighter;
+    font-size: 25px;
     text-shadow: 0px 4px 3px rgba(140,106,78,0.1),
                  0px 8px 13px rgba(140,106,78,0.1),
                  0px 18px 23px rgba(140,106,78,0.1);
@@ -35,12 +62,11 @@ html {
     position: fixed;
     padding-left: 20px;
     padding-right: 20px;
-    top: 5;
     right: 0;
     width: 50%;
     height: 65%;
     z-index: 9999;
-    margin-top: 60px;
+    margin-top: 10%;
     margin-left: 40px;
     margin-right: 60px;
 }
