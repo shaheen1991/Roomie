@@ -28,11 +28,13 @@
 
 .addComment {
     color: rgb(66,110,134);
-    padding-top: 80px;
-    padding-bottom: 20px;
+    margin-top: 50px;
+    padding-top: 30px;
+    margin-bottom: 20px;
     padding-right: 10px;
     border-radius: 0.60rem;
-    height: 550px;
+    height: 484px;
+    background-color: rgba(248,241,229,0.7);
 }   
 
 #commentClm{
@@ -44,10 +46,6 @@
 
 #commentCont {
     height: 100%;
-}
-
-#commentsBox {
-    padding-bottom: 100px;
 }
 
 #postComBtn {

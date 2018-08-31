@@ -9,11 +9,17 @@ html {
 }
 
 .customCal{
-    color: rgb(66,110,134);
-    background-color: rgba(255,255,255,0.8);
+    color: rgb(47,49,49);
+    /* background-color: rgba(255,255,255,0.8); */
+    background:url("/img/landing3.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;  
     padding-top: 15px;
     padding-bottom: 15px;
     border-radius: 0.60rem;
+    margin-top: 30px;
+    border-radius: 0.20rem;
 }
 
 #choreRow{

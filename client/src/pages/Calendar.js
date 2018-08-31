@@ -84,7 +84,7 @@ class Calendar extends Component {
             </Modal> : false
         }
 
-        <Container style={{ paddingTop: 80, paddingBottom: 20}}>
+        <Container id="calContainer" style={{ paddingTop: 80, paddingBottom: 20}}>
         {/* <h1 className="calendarHead">Calendar</h1> */}
           <Row className= "customCal">
             <Col size="md-12">
