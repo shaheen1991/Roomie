@@ -1,16 +1,16 @@
-import React, {Component} from "react";
+import React, { Component } from "react";
 import { slide as Menu } from 'react-burger-menu'
 import { Link } from "react-router-dom";
 import "./Navbar.css";
 
 // Depending on the current path, this component sets the "active" class on the appropriate navigation link item
-class Navbar extends Component{ 
-  showSettings (event) {
+class Navbar extends Component {
+  showSettings(event) {
     event.preventDefault();
   }
 
-  render(){
-    return(
+  render() {
+    return (
       <Menu>
   <nav className="navbar navbar-expand-lg navbar-light" >
 
@@ -75,7 +75,7 @@ class Navbar extends Component{
 
 
 
-  
+
 };
 
 export default Navbar;

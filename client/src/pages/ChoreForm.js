@@ -8,7 +8,6 @@ import moment from 'moment';
 import API from "../utils/API"
 import Wrapper from "../components/Wrapper";
 
-//adding a form to submit chores,roomiename,details and date
 
 class ChoreForm extends React.Component {
 

@@ -90,11 +90,10 @@ class Calendar extends Component {
             <Col size="md-12">
 
               <BigCalendar
-                
                 defaultDate={new Date()}
                 defaultView="month"
                 selectable
-                views={['month', 'day', 'agenda']}
+                views={['month', 'agenda']}
                 onSelectEvent={this.handleOpenModal}
                 events={this.state.events}
                 style={{ height: "70vh"}}

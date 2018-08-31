@@ -12,73 +12,73 @@ const override = css`
 `;
 
 class Landing extends React.Component {
-    constructor(props){
-super(props);
+    constructor(props) {
+        super(props);
 
-this.state={
-    loading:true
-}
+        this.state = {
+            loading: true
+        }
 
 
 
     }
     componentWillMount() {
 
-       console.log("WILL MOUNT: ", this.state.loading)
+        console.log("WILL MOUNT: ", this.state.loading)
     }
-       componentDidMount() {
-        setTimeout(()=> this.setState({loading:false}),1500)
-      
-       console.log("DID MOUNT: ", this.state.loading)
+    componentDidMount() {
+        setTimeout(() => this.setState({ loading: false }), 1500)
+
+        console.log("DID MOUNT: ", this.state.loading)
     }
 
-    
-    render(){
+
+    render() {
         const loading = this.state.loading;
 
-        if(loading){
-            return(
+        if (loading) {
+            return (
                 <div className='sweet-loading'>
-                <BeatLoader
-                className={override}
-                sizeUnit={"px"}
-                size={100}
-                color={'#F9BA32'}
-                loading={this.state.loading}
-                />
-            </div> 
+                    <BeatLoader
+                        className={override}
+                        sizeUnit={"px"}
+                        size={100}
+                        color={'#F9BA32'}
+                        loading={this.state.loading}
+                    />
+                </div>
             )
 
-        }else{
-            return(
+        } else {
+            return (
 
                 <div>
-                 
-                   <div id = "landing">                 
-                   <h1 id="welcomeText">Welcome to Roomie</h1>   
-                       <div id= "landingLeft">
-                           <img id="side2" alt="side2" src="/img/side2.png"/>
-                       </div>
-                       <div id="landingRight">
-                           <img alt="" id="rightPic"/>
-                       </div>
-                       <div id="icon">
-                           <img id="roomieIcon" alt="" src="/img/roomieIconTrans.png"/>
-                           <img id="side" alt="" src="/img/side.png"/>
-                       </div>
-                           <img id="roomieIcon" alt="roomie icon" src="/img/roomieIconTrans.png"/>
-                           <img id="side" alt="side" src="/img/side.png"/>
-                   </div>
-               </div>
-   
-   
-           )
-            
+
+                    <div id="landing">
+                        <h1 id="welcomeText">Welcome to Roomie</h1>
+                        <div id="landingLeft">
+                            <img id="side2" alt="side2" src="/img/side2.png" />
+                        </div>
+                        <div id="landingRight">
+                            <img alt="" id="rightPic" />
+                        </div>
+                        <div id="icon">
+                            <img id="roomieIcon" alt="" src="/img/roomieIconTrans.png" />
+                            <img id="side" alt="" src="/img/side.png" />
+                        </div>
+                        <img id="roomieIcon" alt="roomie icon" src="/img/roomieIconTrans.png" />
+                        <img id="side" alt="side" src="/img/side.png" />
+                    </div>
+                </div>
+
+
+            )
+
         }
 
-        
+
     }
-   
+
 }
 ;
 
