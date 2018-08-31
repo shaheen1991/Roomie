@@ -49,12 +49,11 @@ border: 8px solid #666;
 border-radius: 30px;
   -webkit-border-radius: 30px;
   -moz-border-radius: 30px;
-
 }
 
 /* Right triangle placed top left flush. */
 .tri-right.border.left-top:before {
-  content: ' ';
+content: ' ';
 position: absolute;
   width: 0;
   height: 0;
