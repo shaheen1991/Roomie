@@ -40,7 +40,8 @@
 	margin: 40px;
   display: inline-block;
   position: relative;
-	width: 900px;
+  width: 900px;
+  border-radius: 20px;
 	height: auto;
 	background-color: rgb(147, 214, 130);
 }
@@ -65,7 +66,8 @@
   top: -8px;
 	bottom: auto;
 	border: 32px solid;
-	border-color: #666 transparent transparent transparent;
+  border-color: #666 transparent transparent transparent;
+  
 }
 .tri-right.left-top:after{
 	content: ' ';

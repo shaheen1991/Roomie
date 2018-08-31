@@ -34,6 +34,8 @@
     "react-bootstrap": "^0.32.1",
     "react-burger-menu": "^2.5.2",
     "react-custom-scrollbars": "^4.2.1",
-    "react-responsive-modal": "^3.2.0"
+    "react-emotion": "^9.2.8",
+    "react-responsive-modal": "^3.2.0",
+    "react-spinners": "^0.4.5"
   }
 }
