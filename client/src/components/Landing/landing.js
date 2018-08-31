@@ -59,11 +59,11 @@ this.state={
                            <img id="side2" alt="side2" src="/img/side2.png"/>
                        </div>
                        <div id="landingRight">
-                           <img id="rightPic"/>
+                           <img alt="" id="rightPic"/>
                        </div>
                        <div id="icon">
-                           <img id="roomieIcon" src="/img/roomieIconTrans.png"/>
-                           <img id="side" src="/img/side.png"/>
+                           <img id="roomieIcon" alt="" src="/img/roomieIconTrans.png"/>
+                           <img id="side" alt="" src="/img/side.png"/>
                        </div>
                            <img id="roomieIcon" alt="roomie icon" src="/img/roomieIconTrans.png"/>
                            <img id="side" alt="side" src="/img/side.png"/>
