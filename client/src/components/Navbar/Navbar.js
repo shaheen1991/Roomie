@@ -15,7 +15,7 @@ class Navbar extends Component{
   <nav className="navbar navbar-expand-lg navbar-light" >
 
     <div>
-      <img id= "roomieIconNav" src="/img/roomieIconWhite.png"/>
+      <img alt="" id= "roomieIconNav" src="/img/roomieIconWhite.png"/>
     </div>
     
     <div className="navbar-brand">

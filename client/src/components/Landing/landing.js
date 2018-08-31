@@ -1,7 +1,8 @@
 import React from "react";
 import "./landing.css";
+// import Beatloader from "beatloader";
 import { css } from 'react-emotion';
-import { ClipLoader } from 'react-spinners';
+import { ClipLoader, BeatLoader } from 'react-spinners';
 // import ClipLoader from 'react-spinners/ClipLoader';
 
 const override = css`
@@ -38,7 +39,7 @@ this.state={
         if(loading){
             return(
                 <div className='sweet-loading'>
-                <ClipLoader
+                <BeatLoader
                 className={override}
                 sizeUnit={"px"}
                 size={100}
@@ -59,11 +60,11 @@ this.state={
                            <img id="side2" alt="side2" src="/img/side2.png"/>
                        </div>
                        <div id="landingRight">
-                           <img id="rightPic"/>
+                           <img alt="" id="rightPic"/>
                        </div>
                        <div id="icon">
-                           <img id="roomieIcon" src="/img/roomieIconTrans.png"/>
-                           <img id="side" src="/img/side.png"/>
+                           <img id="roomieIcon" alt="" src="/img/roomieIconTrans.png"/>
+                           <img id="side" alt="" src="/img/side.png"/>
                        </div>
                            <img id="roomieIcon" alt="roomie icon" src="/img/roomieIconTrans.png"/>
                            <img id="side" alt="side" src="/img/side.png"/>

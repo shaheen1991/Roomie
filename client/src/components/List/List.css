@@ -32,60 +32,70 @@
   border-bottom: none;
 } */
 
-
-
-
-/* CSS talk bubble */
 .talk-bubble {
-	margin: 40px;
+  margin: 40px;
+  margin-bottom: 5px;
   display: inline-block;
   position: relative;
-  width: 900px;
+  width: 500px;
   border-radius: 20px;
-	height: auto;
-	background-color: rgb(147, 214, 130);
+  height: auto;
+  background-color: rgba(248,241,229,0.9);
 }
 .border{
-  border: 8px solid #666;
+border: 8px solid #666;
 }
 .round{
-  border-radius: 30px;
-	-webkit-border-radius: 30px;
-	-moz-border-radius: 30px;
-
+border-radius: 30px;
+  -webkit-border-radius: 30px;
+  -moz-border-radius: 30px;
 }
 
 /* Right triangle placed top left flush. */
 .tri-right.border.left-top:before {
-	content: ' ';
-  position: absolute;
-	width: 0;
-	height: 0;
-  left: -40px;
-	right: auto;
-  top: -8px;
-	bottom: auto;
-	border: 32px solid;
-  border-color: #666 transparent transparent transparent;
-  
+content: ' ';
+position: absolute;
+  width: 0;
+  height: 0;
+left: -40px;
+  right: auto;
+top: -8px;
+  bottom: auto;
+  border: 32px solid;
+border-color: #666 transparent transparent transparent;
+
 }
 .tri-right.left-top:after{
-	content: ' ';
-  position: absolute;
-	width: 0;
-	height: 0;
-  left: -20px;
-	right: auto;
-  top: 0px;
-	bottom: auto;
-	border: 22px solid;
-	border-color:  rgb(147, 214, 130) transparent transparent transparent;
+  content: ' ';
+position: absolute;
+  width: 0;
+  height: 0;
+left: -20px;
+  right: auto;
+top: 0px;
+  bottom: auto;
+  border: 22px solid;
+  border-color:  rgba(248,241,229,0.9) transparent transparent transparent;
 }
 
 .talktext {
-  padding-left: 25px;
+  padding-left: 30px;
+  padding-top: 15px;
+  padding-bottom: 15px;
 }
 
-
-
-
+.list-group {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  padding-left: 0;
+  padding-bottom: 20px;
+  margin-bottom: 0;
+  float: right;
+  background-color: rgba(255,255,255,0.3);
+  border-radius: 0.60rem;
+}

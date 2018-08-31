@@ -17,30 +17,31 @@ html {
 }
 
 #choreRow{
-    height: 90%;
+    height: 98%;
     background: url("/img/landing5.jpg");    
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;    
     margin-top: 100px;
+    border-radius: 0.20rem;
 }
 
 #choreForm {
     font-family: 'Alegreya Sans', sans-serif;
     font-weight: lighter;
-    font-size: 40px;
-    text-align: left;
-    color: gray;
-    /* background-color: rgba(248,241,229,0.1); */
-    height: 100%;
+    font-size: 80px;
+    color: rgba(47,49,49,0.7);
+    height: 70%;
     width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 140px;    
-    /* background: url("/img/landing5.jpg");
-
- */
+    margin-left: 20px;
+    writing-mode:tb-rl;
+    -webkit-transform:rotate(180deg);
+    -moz-transform:rotate(180deg);
+    -o-transform: rotate(180deg);
+    -ms-transform:rotate(180deg);
+    transform: rotate(180deg);
+    white-space:nowrap;
+    display:block;
 }
 
 #choreCont {
@@ -48,18 +49,12 @@ html {
     border-radius: 0.60rem;
     padding-bottom: 15px;
     padding-top: 15px;
-    margin-top: 100px;
+    margin-top: 15px;
+    padding-right: 40px;
     height: 600px;
     text-align: left;
+    color: rgba(47,49,49,0.9);
 }
-
-/* #chorePic {
-    content: url("/img/landing8.jpg");
-
-    width: 100%; */
-    /* right: 0; */
-    /* height: 600px;
-} */
 
 .labelChore {
     font-size: 20px;
@@ -79,13 +74,3 @@ html {
     float: left;
 }
 
-/* .calendarHead {
-    font-family:'Alegreya Sans SC', sans-serif;
-    padding-bottom: 10px;
-    padding-left: 12px;
-    color: rgb(248,241,229);
-    text-shadow: 0px 4px 3px rgba(140,106,78,0.1),
-                 0px 8px 13px rgba(140,106,78,0.1),
-                 0px 18px 23px rgba(140,106,78,0.1);
-
-} */
