@@ -59,7 +59,7 @@ class CommentBox extends Component {
     return (
       <Container fluid id="commentCont">
         <Row className="addComment">
-          <Col size="md-12">
+          <Col size="md-6" id="commentClm">
             <form>
               <Input 
                 value={this.state.authorName}
@@ -82,16 +82,18 @@ class CommentBox extends Component {
             </form>
           </Col>
 
-          <Col size="md-10 sm-12" style={{marginLeft: 0, paddingTop: 5}}> 
+          <Col id= "commentsBox" size="md-12 sm-12" style={{ paddingTop: 5}}> 
             {this.state.smacks.length ? (
               
           <List>
             {this.state.smacks.map(smack => (
               <ListItem key={smack._id}>
                 <strong >
+                  <div className="talktext">
                   {smack.authorName} 
                     <hr/>
                   {smack.authorComment}
+                  </div>
                 </strong>
               </ListItem>
             ))}
