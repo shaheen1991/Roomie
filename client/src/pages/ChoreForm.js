@@ -68,7 +68,7 @@ class ChoreForm extends React.Component {
       <div>
         <Wrapper>
         <Navbar1 />
-        <Container style={{height: 700}}>
+        <Container style={{height: 600}}>
           <Row id="choreRow">     
           <Col size="md-6">                   
             <h1 id= "choreForm" >Add Chores</h1>
@@ -87,12 +87,9 @@ class ChoreForm extends React.Component {
                   <label className="labelChore" htmlFor="date">Chore Date</label>
                   <input onChange={this.handleInputChange} value={this.state.date} name="date" type="date" className="form-control choreFormControl" id="date" />
                 </div>
-                <button onClick={this.handleFormSubmit} type="submit" className="btn mb-2" style={{ fontFamily: "'Alegreya Sans', sans-serif", color:"white", marginTop: 40}}>Confirm chore</button>
+                <button onClick={this.handleFormSubmit} type="submit" className="btn mb-2" style={{ fontFamily: "'Alegreya Sans', sans-serif", color:"rgba(47,49,49,0.8) ", marginTop: 40, backgroundColor: "#F8F1E5"}}>Confirm chore</button>
               </form>
             </Col>
-            {/* <Col size="md-6">
-
-            </Col> */}
           </Row>
         </Container>
         <Footer />
