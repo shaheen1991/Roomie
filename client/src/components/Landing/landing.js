@@ -4,81 +4,22 @@ import { css } from 'react-emotion';
 import { ClipLoader } from 'react-spinners';
 // import ClipLoader from 'react-spinners/ClipLoader';
 
-const override = css`
-    display: block;
-    margin: 0 auto;
-    border-color: red;
-`;
+const Landing = () => (
+    <div id = "landing">
+        <div id= "landingLeft">
+        <h1 id="welcomeText">Welcome to Roomie</h1>
+        <img id="side2" alt="side2" src="/img/side2.png"/>
+        </div>
+        <div id="landingRight">
+       <img id="rightPic" alt=""/>
+       </div>
+       <div id="icon">
 
-class Landing extends React.Component {
-    constructor(props) {
-        super(props);
+       <img id="roomieIcon" alt="roomie icon" src="/img/roomieIconTrans.png"/>
+       <img id="side" alt="side" src="/img/side.png"/>
 
-        this.state = {
-            loading: true
-        }
-
-
-
-    }
-    componentWillMount() {
-
-        console.log("WILL MOUNT: ", this.state.loading)
-    }
-    componentDidMount() {
-        setTimeout(() => this.setState({ loading: false }), 1500)
-
-        console.log("DID MOUNT: ", this.state.loading)
-    }
-
-
-    render() {
-        const loading = this.state.loading;
-
-        if (loading) {
-            return (
-                <div className='sweet-loading'>
-                    <ClipLoader
-                        className={override}
-                        sizeUnit={"px"}
-                        size={100}
-                        color={'#F9BA32'}
-                        loading={this.state.loading}
-                    />
-                </div>
-            )
-
-        } else {
-            return (
-
-                <div>
-
-                    <div id="landing">
-                        <h1 id="welcomeText">Welcome to Roomie</h1>
-                        <div id="landingLeft">
-                            <img id="side2" alt="side2" src="/img/side2.png" />
-                        </div>
-                        <div id="landingRight">
-                            <img id="rightPic" />
-                        </div>
-                        <div id="icon">
-                            <img id="roomieIcon" src="/img/roomieIconTrans.png" />
-                            <img id="side" src="/img/side.png" />
-                        </div>
-                        <img id="roomieIcon" alt="roomie icon" src="/img/roomieIconTrans.png" />
-                        <img id="side" alt="side" src="/img/side.png" />
-                    </div>
-                </div>
-
-
-            )
-
-        }
-
-
-    }
-
-}
-;
+      </div>
+    </div>
+);
 
 export default Landing;
