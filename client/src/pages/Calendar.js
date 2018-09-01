@@ -11,6 +11,8 @@ import Footer from "../components/Footer";
 import Big from "../components/Modal";
 import Modal from 'react-responsive-modal';
 import Wrapper from "../components/Wrapper";
+import { Carousel } from 'react-bootstrap';
+
 
 
 BigCalendar.setLocalizer(BigCalendar.momentLocalizer(moment))
@@ -63,7 +65,7 @@ class Calendar extends Component {
   render() {
 
     return (
-      <div> 
+      <div > 
 
         <Wrapper>
         <Navbar1 />
@@ -84,11 +86,10 @@ class Calendar extends Component {
             </Modal> : false
         }
 
-        <Container id="calContainer" style={{ paddingTop: 80, paddingBottom: 20}}>
+        <Container className="calContainer" style={{ paddingTop: 80, paddingBottom: 20}}>
         {/* <h1 className="calendarHead">Calendar</h1> */}
-          <Row className= "customCal">
-            <Col size="md-12">
-
+          <Row >
+            <Col size="md-12"className= "customCal">
               <BigCalendar
                 
                 defaultDate={new Date()}
@@ -97,14 +98,71 @@ class Calendar extends Component {
                 views={['month', 'day', 'agenda']}
                 onSelectEvent={this.handleOpenModal}
                 events={this.state.events}
-                style={{ height: "70vh"}}
+                style={{ height: "80vh"}}
               />
             </Col>
           </Row>
-        </Container>
 
-        <Footer id="footer" />
-        </Wrapper>
+        </Container >  
+            <div >
+              <h2 className="options"> Style Your Apartment</h2>
+            </div>        
+            <Carousel className="calCarousel">
+              <Carousel.Item>
+                <img width={900} height={500} alt="900x500" src="/img/carousel1.jpg" />
+              </Carousel.Item>
+              <Carousel.Item>
+                <img width={900} height={500} alt="900x500" src="/img/carousel2.jpg" />
+              </Carousel.Item>
+              <Carousel.Item>
+                <img width={900} height={500} alt="900x500" src="/img/carousel3.jpg" />
+              </Carousel.Item>
+              <Carousel.Item>
+                <img width={900} height={500} alt="900x500" src="/img/carousel4.jpg" />
+              </Carousel.Item>
+              <Carousel.Item>
+                <img width={900} height={500} alt="900x500" src="/img/carousel5.jpg" />
+              </Carousel.Item>
+              <Carousel.Item>
+                <img width={900} height={500} alt="900x500" src="/img/carousel6.jpg" />
+              </Carousel.Item>
+              <Carousel.Item>
+                <img width={900} height={500} alt="900x500" src="/img/carousel7.jpg" />
+              </Carousel.Item>
+              <Carousel.Item>
+                <img width={900} height={500} alt="900x500" src="/img/carousel8.jpg" />
+              </Carousel.Item>
+              <Carousel.Item>
+                <img width={900} height={500} alt="900x500" src="/img/carousel9.jpg" />
+              </Carousel.Item>
+              <Carousel.Item>
+                <img width={900} height={500} alt="900x500" src="/img/carousel10.jpg" />
+              </Carousel.Item>
+              <Carousel.Item>
+                <img width={900} height={500} alt="900x500" src="/img/carousel11.jpg" />
+              </Carousel.Item>
+              <Carousel.Item>
+                <img width={900} height={500} alt="900x500" src="/img/carousel12.jpg" />
+              </Carousel.Item>
+              <Carousel.Item>
+                <img width={900} height={500} alt="900x500" src="/img/carousel13.jpg" />
+              </Carousel.Item>
+              <Carousel.Item>
+                <img width={900} height={500} alt="900x500" src="/img/carousel14.jpg" />
+              </Carousel.Item>
+              <Carousel.Item>
+                <img width={900} height={500} alt="900x500" src="/img/carousel15.jpg" />
+              </Carousel.Item>
+              <Carousel.Item>
+                <img width={900} height={500} alt="900x500" src="/img/carousel16.jpg" />
+              </Carousel.Item>
+              <Carousel.Item>
+                <img width={900} height={500} alt="900x500" src="/img/carousel17.jpg" />
+              </Carousel.Item>
+            </Carousel>;
+        <Footer />
+        </Wrapper>        
+  
       </div>
 
     )

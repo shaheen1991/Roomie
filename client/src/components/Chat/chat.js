@@ -1,14 +1,12 @@
 import React, { Component } from "react";
 import "./chat.css";
 import API from "../../utils/API";
-
-
 import Container from "../../components/Container";
 import Row from "../../components/Row";
 import Col from "../../components/Col";
 import { List, ListItem } from "../../components/List";
 import { Input,  FormBtn } from "../../components/Form";
-// import { Link } from "react-router-dom";
+
 
 class CommentBox extends Component {
  state = {
@@ -81,7 +79,7 @@ class CommentBox extends Component {
            </form>
          </Col>
 
-         <Col size="md-12 sm-12" style={{marginLeft: 0, paddingTop: 5}}>
+         <Col size="md-10 sm-12" style={{marginLeft: 0, paddingTop: 5, maxWidth: "100%"}}>
            {this.state.smacks.length ? (
 
          <List>
@@ -107,5 +105,3 @@ class CommentBox extends Component {
 }
 
 export default CommentBox;
-
-

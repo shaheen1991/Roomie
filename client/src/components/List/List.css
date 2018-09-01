@@ -53,13 +53,13 @@ border-radius: 30px;
 
 /* Right triangle placed top left flush. */
 .tri-right.border.left-top:before {
-content: ' ';
-position: absolute;
+  content: ' ';
+  position: absolute;
   width: 0;
   height: 0;
-left: -40px;
+  left: -40px;
   right: auto;
-top: -8px;
+  top: -8px;
   bottom: auto;
   border: 32px solid;
 border-color: #666 transparent transparent transparent;
@@ -67,12 +67,12 @@ border-color: #666 transparent transparent transparent;
 }
 .tri-right.left-top:after{
   content: ' ';
-position: absolute;
+  position: absolute;
   width: 0;
   height: 0;
-left: -20px;
+  left: -20px;
   right: auto;
-top: 0px;
+  top: 0px;
   bottom: auto;
   border: 22px solid;
   border-color:  rgba(248,241,229,0.9) transparent transparent transparent;

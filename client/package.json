@@ -8,6 +8,7 @@
     "axios": "^0.16.2",
     "create-react-class": "^15.6.3",
     "emotion": "^9.2.8",
+    "font-awesome": "^4.7.0",
     "moment": "^2.22.2",
     "react": "^16.0.0",
     "react-big-calendar": "^0.19.2",

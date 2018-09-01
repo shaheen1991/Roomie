@@ -1,11 +1,11 @@
 import React from "react";
 import Landing from "../components/Landing";
-import HomeWrapper from "../components/HomeWrapper";
+import Wrapper from "../components/Wrapper";
 
 const Home = () => (
- <HomeWrapper>
+ <Wrapper>
   <Landing />
-  </HomeWrapper>
+  </Wrapper>
 );
 
 export default Home;

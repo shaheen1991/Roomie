@@ -4,13 +4,10 @@ import Home from "./pages/Home";
 import SmackTalk from "./pages/SmackTalk";
 import ChoreForm from "./pages/ChoreForm";
 import Calendar from "./pages/Calendar";
-
-
-//import C from "./pages/chat";
-// import Auth from './Auth/Auth.js';
-// import React, { Component } from 'react';
-// import { Navbar, Button } from 'react-bootstrap';
 import './css/App.css';
+import 'font-awesome/css/font-awesome.min.css'
+
+
 
 
 const App = () => (
