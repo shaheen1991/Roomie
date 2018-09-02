@@ -2,14 +2,23 @@
   background-color: rgba(66,110,134,0.8);
   color: rgb(248,241,229);
   text-align: center;
-  position:fixed;
+  position: fixed;
   left:0; 
   bottom:0;
   right:0;
+  font-size: 15px;
+  padding-bottom:15px;
+  padding-top: 15px;
 }
-
+/* 
 .footer span {
   height: 100px;
+} */
+
+.fa {
+  padding:15px;
+  color: white;
 }
+
 
 

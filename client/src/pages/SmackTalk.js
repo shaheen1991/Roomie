@@ -11,7 +11,7 @@ const SmackTalk = () => (
   <div>
   <Wrapper>
     <Navbar1 />
-    <Container style={{height: 600}}>
+    <Container style={{height: 1000}}>
       <Row id="smackTalkRow" >
         <Col size="md-2">
           <h1 className="smackTalk">SmackTalk</h1>
@@ -20,10 +20,10 @@ const SmackTalk = () => (
            <CommentBox/>
         </Col>
       </Row>
-
-
-
     </Container>
+    
+    
+    
     <Footer />  
     </Wrapper>
   </div>

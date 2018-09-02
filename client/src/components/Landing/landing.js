@@ -1,9 +1,7 @@
 import React from "react";
 import "./landing.css";
-// import Beatloader from "beatloader";
 import { css } from 'react-emotion';
-import { ClipLoader, BeatLoader } from 'react-spinners';
-// import ClipLoader from 'react-spinners/ClipLoader';
+import { BarLoader } from 'react-spinners';
 
 const override = css`
     display: block;
@@ -26,27 +24,29 @@ class Landing extends React.Component {
 
         console.log("WILL MOUNT: ", this.state.loading)
     }
-    componentDidMount() {
-        setTimeout(() => this.setState({ loading: false }), 1500)
-
-        console.log("DID MOUNT: ", this.state.loading)
+       componentDidMount() {
+        setTimeout(()=> this.setState({loading:false}),3000)
+      
+       console.log("DID MOUNT: ", this.state.loading)
     }
 
 
     render() {
         const loading = this.state.loading;
 
-        if (loading) {
-            return (
+        if(loading){
+            return(
+
                 <div className='sweet-loading'>
-                    <BeatLoader
-                        className={override}
-                        sizeUnit={"px"}
-                        size={100}
-                        color={'#F9BA32'}
-                        loading={this.state.loading}
+                    <BarLoader
+                    className={override}
+                    sizeUnit={"px"}
+                    size={80}
+                    color={'#426E86  '}
+                    loading={this.state.loading}
                     />
-                </div>
+                </div> 
+
             )
 
         } else {

@@ -8,13 +8,108 @@ html {
 
 }
 
-.customCal{
-    color: rgb(66,110,134);
-    background-color: rgba(255,255,255,0.8);
-    padding-top: 15px;
-    padding-bottom: 15px;
-    border-radius: 0.60rem;
+/* Calendar CSS */
+
+.calContainer {
+   background:url("/img/calendar.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;  
+    height: 1000px;
 }
+
+.customCal{
+    background-color: rgba(248,241,229,0.8);
+    color: rgb(47,49,49);
+    padding: 15px;
+    border-radius: 0.60rem;
+    margin-top: 30px;
+    border-radius: 0.20rem;
+    width: 80%;
+    margin-left: 10%;
+    margin-right: 10%;
+
+}
+
+.rbc-day-bg {
+    -ms-flex: 1 0 0%;
+    flex: 1 0;
+    border: 1px solid rgba(47,49,49,0.1);
+}
+
+.rbc-header {
+    overflow: hidden;
+    -ms-flex: 1 0 0%;
+    flex: 1 0;
+    -o-text-overflow: ellipsis;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    padding: 0 3px;
+    text-align: center;
+    vertical-align: middle;
+    font-weight: bold;
+    font-size: 90%;
+    min-height: 0;
+    border: 1px solid rgba(47,49,49,0.1);
+    border-bottom: 1px solid #DDD;
+}
+
+.rbc-row {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-direction: row;
+    flex-direction: row;
+    font-size: 15px;
+}
+
+.rbc-toolbar button {
+    color: #373a3c;
+    display: inline-block;
+    margin: 0;
+    text-align: center;
+    vertical-align: middle;
+    background: none;
+    background-image: none;
+    padding: .375rem 1rem;
+    border-radius: 4px;
+    line-height: normal;
+    white-space: nowrap;
+    border: 1px solid rgba(47,49,49,0.1);
+}
+.rbc-event {
+    padding: 2px 5px;
+    background-color: rgb(66,110,134);
+    border-radius: 5px;
+    color: #fff;
+    cursor: pointer;
+}
+
+.rbc-toolbar .rbc-toolbar-label {
+    -ms-flex-positive: 1;
+    flex-grow: 1;
+    padding: 0 10px;
+    text-align: center;
+    font-size: 30px;
+}
+
+/*Carousel CSS*/
+
+.calCarousel{
+    margin: 100px;
+    width: 800px;
+
+}
+
+.options {
+    float: right;
+    padding-right: 136px;
+    padding-top: 336px;
+    font-family: 'Alegreya Sans', sans-serif;
+    font-weight:lighter;
+    font-size: 35px;
+}
+
+/* ChoreForm CSS */
 
 #choreRow{
     height: 98%;
@@ -24,6 +119,7 @@ html {
     background-size: cover;    
     margin-top: 100px;
     border-radius: 0.20rem;
+    margin-bottom: 200px;
 }
 
 #choreForm {
@@ -73,4 +169,3 @@ html {
     width: 100%;
     float: left;
 }
-
